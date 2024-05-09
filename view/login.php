@@ -9,8 +9,8 @@
 
     </head>
     <body>
-        <div class="d-flex justify-content-center">
-            <form class="d-flex flex-column justify-content-center" style="height: 100vh;">
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <form class="d-flex flex-column border p-4">
                 <h2>Login</h2>
                 <input type="email" placeholder="E-Mail" class="form-control mb-2">
                 <input type="password" placeholder="Password" class="form-control mb-2">
