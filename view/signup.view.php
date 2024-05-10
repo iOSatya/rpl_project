@@ -2,4 +2,4 @@
 
 require_once "AddPage.view.php";
 
-$page = new AddPage("signup.php");
+$page = new AddPage(["signup.php"]);
