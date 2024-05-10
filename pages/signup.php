@@ -16,7 +16,7 @@
                     </select>
                 </div>
 
-                <a href="login.php" class="align-self-end mb-2">I already have an account</a>
+                <a href="" class="align-self-end mb-2">I already have an account</a>
                 <button type="submit" class="btn btn-primary align-self-start">Signup</button>
             </form>
         </div>
