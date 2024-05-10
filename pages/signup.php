@@ -17,7 +17,7 @@
                 <input name="confirmPwd" type="password" placeholder="Confirm Password" class="form-control mb-2">
 
 
-                <div class="input-group">
+                <div class="input-group mb-2">
                     <label class="input-group-text">As</label>
                     <select class="form-select">
                       <option selected>Choose...</option>
