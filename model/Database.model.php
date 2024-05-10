@@ -21,7 +21,7 @@ class Database {
         }
     }
 
-    protected function getEmail($email) {
+    protected function findEmail($email) {
         $query = "select email from players where email=?;";
         $stmt = $this->dbConnect()->prepare($query);
         $stmt->execute([$email]);
