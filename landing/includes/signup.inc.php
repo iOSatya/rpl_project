@@ -10,11 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirmPwd = $_POST["confirmPwd"];
     $playerStatus = $_POST["playerStatus"];
 
-    $playerData = new SignupControl($email, $pwd, $confirmPwd, $playerStatus);
-    if ($playerData->isError() == true) {
-        echo $playerData->errors;
+    $data = new SignupControl($email, $pwd, $confirmPwd, $playerStatus);
+    if ($data->isError() == true) {
+        echo $data->errors;
     } else {
-        $playerData->signupPlayer();
+        $data->signupPlayer();
         echo "Signup Success!";
     }
 
