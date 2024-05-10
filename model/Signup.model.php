@@ -15,5 +15,6 @@ class Signup extends Database {
         $query = "insert into players (email, pwd, player_status) values (?, ?, ?);";
         $stmt = parent::dbConnect()->prepare($query);
         $stmt->execute([$this->email, $this->pwd, $this->playerStatus]);
+        header("Location: " . $_SERVER["DOCUMENT_ROOT"] . "/view/signup.php");
     }
 }
