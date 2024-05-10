@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $data = new SignupControl($email, $pwd, $confirmPwd, $playerStatus);
     if ($data->isError() == true) {
-        echo $data->errors;
+        echo $data->errorMessage;
     } else {
         $data->signupPlayer();
         echo "Signup Success!";

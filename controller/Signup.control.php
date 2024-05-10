@@ -1,7 +1,7 @@
 <?php
 
 class SignupControl extends SignupModel {
-    public $errors = "";
+    public $errorMessage = "";
     private $confirmPwd = "";
 
     public function __construct($email, $pwd, $confirmPwd, $playerStatus) {
@@ -11,16 +11,16 @@ class SignupControl extends SignupModel {
 
     public function isError() {
         if (empty($this->email) || empty($this->pwd) || empty($this->confirmPwd) || empty($this->playerStatus)) {
-            $this->errors = "Field Must not Empty!";
+            $this->errorMessage = "Field Must not Empty!";
             return true;
         } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $this->errors = "Email is Invalid!";
+            $this->errorMessage = "Email is Invalid!";
             return true;
         } else if (!empty(parent::getEmail($this->email))) {
-            $this->errors = "Email is Already Registered!";
+            $this->errorMessage = "Email is Already Registered!";
             return true;
         } else if ($this->pwd !== $this->confirmPwd) {
-            $this->errors = "Password does not Match!";
+            $this->errorMessage = "Password does not Match!";
             return true;
         }
     }
