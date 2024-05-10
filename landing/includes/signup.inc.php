@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $playerStatus = $_POST["playerStatus"];
 
     $data = new SignupControl($email, $pwd, $confirmPwd, $playerStatus);
+    
     if ($data->isError() == true) {
         echo $data->errorMessage;
     } else {
