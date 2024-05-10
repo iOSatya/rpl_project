@@ -1,6 +1,5 @@
 <?php
 
-
 $dbId = "mysql:host=localhost; dbname=rpl_project"; // host buat url databasenya, dbname buat nama databasenya
 $dbUsername = "root"; // nama user yg punya database
 $dbPassword = ""; // password user yg punya database
