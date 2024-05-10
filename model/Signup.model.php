@@ -1,9 +1,10 @@
 <?php
 
 class SignupModel extends Database {
-    private $email;
-    private $pwd;
-    private $playerStatus;
+    protected $email;
+    protected $pwd;
+    protected $confirmPwd;
+    protected $playerStatus;
 
     public function __construct($email, $pwd, $playerStatus) {
         $this->email = $email;
@@ -11,10 +12,10 @@ class SignupModel extends Database {
         $this->playerStatus = $playerStatus;
     }
 
-    public function signupUser() {
+    private function signupUser() {
         $query = "insert into players (email, pwd, player_status) values (?, ?, ?);";
         $stmt = parent::dbConnect()->prepare($query);
         $stmt->execute([$this->email, $this->pwd, $this->playerStatus]);
-        header("Location: " . $_SERVER["DOCUMENT_ROOT"] . "/view/signup.php");
+        header("Location: " . $_SERVER["DOCUMENT_ROOT"] . "/pages/signup.php");
     }
 }
