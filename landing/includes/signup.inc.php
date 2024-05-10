@@ -1,5 +1,6 @@
 <?php
 
+require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/controller/Session.control.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/model/Database.model.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/model/Signup.model.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/controller/Signup.control.php";

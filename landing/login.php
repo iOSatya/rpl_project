@@ -1,6 +1,8 @@
 <?php
 
+require_once "../controller/Session.control.php";
 require_once "../view/AddItem.view.php";
 require_once "../view/AddPage.view.php";
+require_once "../view/Login.view.php";
 
-new AddPage(["login.pages.php"]);
+new LoginView(["login.pages.php"]);
