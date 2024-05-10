@@ -12,7 +12,7 @@ class SignupModel extends Database {
         $this->playerStatus = $playerStatus;
     }
 
-    private function signupUser() {
+    protected function insertPlayer() {
         $query = "insert into players (email, pwd, player_status) values (?, ?, ?);";
         $stmt = parent::dbConnect()->prepare($query);
         $stmt->execute([$this->email, $this->pwd, $this->playerStatus]);

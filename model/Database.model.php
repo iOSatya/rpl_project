@@ -20,4 +20,12 @@ class Database {
             die();
         }
     }
+
+    protected function getEmail($email) {
+        $query = "select email from players where email=?;";
+        $stmt = $this->dbConnect()->prepare($query);
+        $stmt->execute([$email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
