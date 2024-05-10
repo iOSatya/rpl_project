@@ -1,6 +1,6 @@
 <?php
 
-class Signup extends Database {
+class SignupModel extends Database {
     private $email;
     private $pwd;
     private $playerStatus;
@@ -11,7 +11,7 @@ class Signup extends Database {
         $this->playerStatus = $playerStatus;
     }
 
-    private function insertUser() {
+    public function signupUser() {
         $query = "insert into players (email, pwd, player_status) values (?, ?, ?);";
         $stmt = parent::dbConnect()->prepare($query);
         $stmt->execute([$this->email, $this->pwd, $this->playerStatus]);
