@@ -16,6 +16,9 @@
                 </div>
 
                 <a href="login.php" class="align-self-end mb-2">I already have an account</a>
+                <?php echo $_SESSION["signupMessage"]; $_SESSION["signupMessage"] = ""; ?>
                 <button type="submit" class="btn btn-primary align-self-start">Signup</button>
+
+                
             </form>
         </div>

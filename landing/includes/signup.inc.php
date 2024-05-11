@@ -12,12 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $playerStatus = $_POST["playerStatus"];
 
     $data = new SignupControl($email, $pwd, $confirmPwd, $playerStatus);
-    
+    $_SESSION["signupMessage"];
+
     if ($data->isError() == true) {
-        echo $data->errorMessage;
+        $_SESSION["signupMessage"] = "<p class='mb-2 text-danger'>" . $data->errorMessage . "</p>";
+        header("Location: ../signup.php");
+        die();
     } else {
         $data->signupPlayer();
-        echo "Signup Success!";
+        $_SESSION["signupMessage"] = "<p class='mb-2 text-success'>Signup Success!</p>";
+        header("Location: ../signup.php");
+        die();
     }
 
 }
