@@ -16,7 +16,7 @@
                 </div>
 
                 <a href="login.php" class="align-self-end mb-2">I already have an account</a>
-                <?php echo $_SESSION["signupMessage"]; $_SESSION["signupMessage"] = ""; ?>
+                <?php if (isset($_SESSION["signupMessage"])) { echo $_SESSION["signupMessage"]; } unset($_SESSION["signupMessage"]) ?>
                 <button type="submit" class="btn btn-primary align-self-start">Signup</button>
 
                 
