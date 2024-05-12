@@ -1,9 +1,9 @@
 <?php
 
 class LoginView extends AddItem {
-    public function __construct($pages) {
+    public function __construct() {
         parent::getHead();
-        parent::__construct($pages);
+        parent::__construct(["login.pages.php"]);
         parent::getFoot();
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
 class SignupView extends AddItem {
-    public function __construct($pages) {
+    public function __construct() {
         parent::getHead();
-        parent::__construct($pages);
+        parent::__construct(["signup.pages.php"]);
         parent::getFoot();
     }
 }

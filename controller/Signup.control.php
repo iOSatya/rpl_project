@@ -11,7 +11,7 @@ class SignupControl extends SignupModel {
 
     public function isError() {
         if (empty($this->email) || empty($this->pwd) || empty($this->confirmPwd) || empty($this->playerStatus)) {
-            $this->errorMessage = "Field Must not Empty!";
+            $this->errorMessage = "Field All Fields!";
             return true;
         } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->errorMessage = "Email is Invalid!";
