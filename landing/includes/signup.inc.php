@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $playerStatus = $_POST["playerStatus"];
 
     $data = new SignupControl($email, $pwd, $confirmPwd, $playerStatus);
-    $_SESSION["signupMessage"];
+    $_SESSION["signupMessage"] = "";
 
     if ($data->isError() == true) {
         $_SESSION["signupMessage"] = "<p class='mb-2 text-danger'>" . $data->errorMessage . "</p>";
@@ -25,4 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die();
     }
 
+} else {
+    header("Location: ../signup.php");
+    die();
 }

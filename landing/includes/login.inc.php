@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pwd = $_POST["pwd"];
 
     $data = new LoginControl($email, $pwd);
-    $_SESSION["loginMessage"];
+    $_SESSION["loginMessage"] = "";
 
     if ($data->isError() == true) {
         $_SESSION["loginMessage"] = "<p class='mb-2 text-danger'>" . $data->errorMessage . "</p>";
@@ -20,4 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Login Success!";
     }
 
+} else {
+    header("Location: ../login.php");
+    die();
 }

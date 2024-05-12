@@ -14,8 +14,8 @@ class LoginControl extends LoginModel {
         } else if (empty(parent::findEmail($this->email))) {
             $this->errorMessage = "Email is not Registered!";
             return true;
-        } else if (!password_verify($this->pwd, )) {
-            $this->errorMessage = "Password does not Match";
+        } else if (!password_verify($this->pwd, parent::findPwd($this->email)["pwd"])) {
+            $this->errorMessage = "Password does not Match!";
             return true;
         }
     }
