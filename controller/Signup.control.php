@@ -26,7 +26,10 @@ class SignupControl extends SignupModel {
     }
 
     private function passwordHash($pwd) {
-        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
+        $options = [
+            "cost" => 13
+        ];
+        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
         return $hashedPwd;
     }
 
