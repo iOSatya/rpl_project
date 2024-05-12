@@ -21,19 +21,12 @@ class Database {
         }
     }
 
-    protected function findEmail($email) {
-        $query = "select email from players where email=?;";
+    protected function findByEmail($email) {
+        $query = "select * from players where email=?;";
         $stmt = $this->dbConnect()->prepare($query);
         $stmt->execute([$email]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    protected function findPwd($email) {
-        $query = "select pwd from players where email=?;";
-        $stmt = $this->dbConnect()->prepare($query);
-        $stmt->execute([$email]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result;
-    }
 }

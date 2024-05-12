@@ -11,10 +11,10 @@ class LoginControl extends LoginModel {
         if (empty($this->email) || empty($this->pwd)) {
             $this->errorMessage = "Fill All Fields!";
             return true;
-        } else if (empty(parent::findEmail($this->email))) {
+        } else if (empty(parent::findByEmail($this->email))) {
             $this->errorMessage = "Email is not Registered!";
             return true;
-        } else if (!password_verify($this->pwd, parent::findPwd($this->email)["pwd"])) {
+        } else if (!password_verify($this->pwd, parent::findByEmail($this->email)["pwd"])) {
             $this->errorMessage = "Password does not Match!";
             return true;
         }

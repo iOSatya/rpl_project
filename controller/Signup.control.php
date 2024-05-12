@@ -16,7 +16,7 @@ class SignupControl extends SignupModel {
         } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->errorMessage = "Email is Invalid!";
             return true;
-        } else if (!empty(parent::findEmail($this->email))) {
+        } else if (!empty(parent::findByEmail($this->email))) {
             $this->errorMessage = "Email is Already Registered!";
             return true;
         } else if ($this->pwd !== $this->confirmPwd) {
