@@ -2,7 +2,7 @@
 
 class SignupModel extends Database {
     protected $email = "";
-    protected $pwd = "";
+    public $pwd = "";
     protected $playerStatus = "";
 
     public function __construct($email, $pwd, $playerStatus) {
@@ -11,9 +11,9 @@ class SignupModel extends Database {
         $this->playerStatus = $playerStatus;
     }
 
-    protected function insertPlayer($email, $hashedPwd, $playerStatus) {
+    protected function insertPlayer($email, $pwd, $playerStatus) {
         $query = "insert into players (email, pwd, player_status) values (?, ?, ?);";
         $stmt = parent::dbConnect()->prepare($query);
-        $stmt->execute([$email, $hashedPwd, $playerStatus]);
+        $stmt->execute([$email, $pwd, $playerStatus]);
     }
 }

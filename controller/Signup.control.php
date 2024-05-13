@@ -16,7 +16,7 @@ class SignupControl extends SignupModel {
         } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->errorMessage = "Email is Invalid!";
             return true;
-        } else if (!empty(parent::findByEmail($this->email))) {
+        } else if (!empty(parent::findEmail($this->email))) {
             $this->errorMessage = "Email is Already Registered!";
             return true;
         } else if ($this->pwd !== $this->confirmPwd) {
@@ -25,15 +25,15 @@ class SignupControl extends SignupModel {
         }
     }
 
-    private function passwordHash($pwd) {
+    private function passwordHash() {
         $options = [
             "cost" => 13
         ];
-        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
+        $hashedPwd = password_hash($this->pwd, PASSWORD_BCRYPT, $options);
         return $hashedPwd;
     }
 
     public function signupPlayer() {
-        parent::insertPlayer($this->email, $this->passwordHash($this->pwd), $this->playerStatus);
+        parent::insertPlayer($this->email, $this->passwordHash(), $this->playerStatus);
     }
 }
