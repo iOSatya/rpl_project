@@ -1,5 +1,7 @@
 <?php
 
+require_once BASE_URL . "model/Database.model.php";
+
 class SignupModel extends Database {
     protected $email = "";
     public $pwd = "";
