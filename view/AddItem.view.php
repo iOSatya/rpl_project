@@ -3,16 +3,16 @@
 class AddItem {
     public function __construct($pages) {
         foreach ($pages as $page) {
-            require $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/pages/" . $page;
+            require BASE_URL . "pages/" . $page;
         }
     }
 
     protected function getHead() {
-        return require $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/pages/templates/head.pages.php";
+        return require BASE_URL . "pages/templates/head.pages.php";
     }
 
     protected function getFoot() {
-        return require $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/pages/templates/foot.pages.php";
+        return require BASE_URL . "pages/templates/foot.pages.php";
     }
     
 }

@@ -1,9 +1,8 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/controller/Session.control.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/model/Database.model.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/model/Signup.model.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/controller/Signup.control.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/config/define.config.php";
+require_once BASE_URL . "config/session.config.php";
+require_once BASE_URL . "controller/Signup.control.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];

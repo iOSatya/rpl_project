@@ -1,5 +1,7 @@
 <?php
 
+require_once BASE_URL . "model/Login.model.php";
+
 class LoginControl extends LoginModel {
     public $errorMessage = "";
 

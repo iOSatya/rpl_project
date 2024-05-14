@@ -1,5 +1,7 @@
 <?php
 
+require_once BASE_URL . "model/Signup.model.php";
+
 class SignupControl extends SignupModel {
     public $errorMessage = "";
     private $confirmPwd = "";
