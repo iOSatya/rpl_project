@@ -3,6 +3,7 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/config/define.config.php";
 require_once BASE_URL . "config/session.config.php";
 require_once BASE_URL . "controller/Login.control.php";
+require_once BASE_URL . "model/Player.model.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -16,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../login.php");
         die();
     } else {
-        echo "Login Success!";
+        $_SESSION["playerData"] = serialize(new PlayerModel($email));
+        header("Location: ../home.php");
+        die();
     }
 
 } else {

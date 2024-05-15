@@ -21,6 +21,14 @@ class Database {
         }
     }
 
+    protected function findPlayerId($email) {
+        $query = "select player_id from players where email=?;";
+        $stmt = $this->dbConnect()->prepare($query);
+        $stmt->execute([$email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result["player_id"];
+    }
+
     protected function findEmail($email) {
         $query = "select email from players where email=?;";
         $stmt = $this->dbConnect()->prepare($query);
@@ -35,6 +43,14 @@ class Database {
         $stmt->execute([$email]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result["pwd"];
+    }
+
+    protected function findPlayerStatus($email) {
+        $query = "select player_status from players where email=?;";
+        $stmt = $this->dbConnect()->prepare($query);
+        $stmt->execute([$email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result["player_status"];
     }
 
 }
