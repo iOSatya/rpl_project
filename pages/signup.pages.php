@@ -9,9 +9,9 @@
                 <div class="input-group mb-2">
                     <label class="input-group-text">As</label>
                     <select name="playerStatus" class="form-select">
-                      <option value="student">Student</option>
-                      <option value="teacher">Teacher</option>
-                      <option value="admin">Admin</option>
+                      <option value="Student">Student</option>
+                      <option value="Teacher">Teacher</option>
+                      <option value="Admin">Admin</option>
                     </select>
                 </div>
 
