@@ -8,7 +8,7 @@
     </a>
     <br class="m-3">
     <a href="#" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
-        <img src="../pages/images/Prosperous_fantasy_kingdom_landscape.png" class="card-img-top" alt="...">
+        <img src="../pages/images/Guild_banner.png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">The Illumination Leaderboards</h5>
             <p class="card-text">Behold the luminous ranks where intellectual giants dwell, basking in transcendent knowledge. Ascend through dedicated striving to join their refulgent realm!</p>
