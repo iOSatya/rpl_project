@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+<div class="d-flex justify-content-center align-items-center bg-dark" style="height: 100vh;">
     <a href="#" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
         <img src="../pages/images/Medieval_table_with_pen.png" class="card-img-top" alt="...">
         <div class="card-body">
