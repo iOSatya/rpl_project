@@ -26,6 +26,7 @@ nextBtn.onclick = function () {
         storyText.textContent = story[x];
     }
     if (x == story.length) {
+        // Change this to the next game mechanic
         window.location.replace("DELETE_THIS_LATER.php");
     }
     x++;

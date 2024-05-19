@@ -12,5 +12,6 @@ if (empty($studentData->storySkip)) {
     new StoryView();
     $studentData->updateStorySkip();
 } else {
+    // Change this to the next game mechanic
     header("Location: DELETE_THIS_LATER.php");
 }
