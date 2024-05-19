@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center bg-dark" style="height: 100vh;">
     <a href="story.php" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
-        <img src="images/Prosperous_fantasy_kingdom_attacked_by_dark_monster.png" class="card-img-top" alt="...">
+        <img src="images/Kingdom_attacked.png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Begin Your Questing Trials</h5>
             <p class="card-text">Steel your mind for the intellectual gauntlet ahead. Embark on questing trials crafted to push your knowledge and grit to the limits. Answer the call to adventure!</p>

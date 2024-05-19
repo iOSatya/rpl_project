@@ -1,4 +1,4 @@
-        <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('images/Prosperous_fantasy_kingdom_landscape.png'); background-size: cover; background-position: 0px -100px;">
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('images/Fantasy_kingdom.png'); background-size: cover; background-position: 0px -100px;">
             <form action="includes/signup.inc.php" method="post" class="d-flex flex-column bg-white bg-opacity-10 p-4">
                 <h2>Signup</h2>
                 <input name="email" type="text" placeholder="E-Mail" class="form-control mb-2">

@@ -9,18 +9,18 @@ const story = [
 ];
 
 const background = [
-    "Prosperous_fantasy_kingdom_landscape.png",
-    "Prosperous_fantasy_kingdom_attacked_by_dark_monster.png",
+    "images/Fantasy_kingdom_enhanced.png",
+    "images/Kingdom_attacked.png",
 ];
 
-backgroundImg.style.backgroundImage = `url(images/${background[0]})`;
+backgroundImg.style.backgroundImage = `url(${background[0]})`;
 storyText.textContent = story[0];
 
 let x = 1;
 
 nextBtn.onclick = function () {
     if (x == 2) {
-        backgroundImg.style.backgroundImage = `url(images/${background[1]})`;
+        backgroundImg.style.backgroundImage = `url(${background[1]})`;
     }
     if (x < story.length) {
         storyText.textContent = story[x];
