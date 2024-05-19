@@ -4,10 +4,12 @@ require_once BASE_URL . "model/Database.model.php";
 
 class StudentModel extends Database {
     private $playerId = "";
+    public $studentId = "";
     public $storySkip = false;
 
     public function __construct($playerId) {
         $this->playerId = $playerId;
+        $this->studentId = $this->findStudentId();
         $this->storySkip = $this->getStorySkip();
     }
 
@@ -24,5 +26,13 @@ class StudentModel extends Database {
         $query = "update students set story_skip=? where player_id=?";
         $stmt = parent::dbConnect()->prepare($query);
         $stmt->execute([$this->storySkip, $this->playerId]);
+    }
+
+    private function findStudentId() {
+        $query = "select student_id from players where player_id=?;";
+        $stmt = $this->dbConnect()->prepare($query);
+        $stmt->execute([$this->playerId]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result["student_id"];
     }
 }
