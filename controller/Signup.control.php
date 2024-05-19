@@ -5,6 +5,7 @@ require_once BASE_URL . "model/Signup.model.php";
 class SignupControl extends SignupModel {
     public $errorMessage = "";
     private $confirmPwd = "";
+    private $playerId = 0;
 
     public function __construct($email, $pwd, $confirmPwd, $playerStatus) {
         parent::__construct($email, $pwd, $playerStatus);
@@ -37,5 +38,9 @@ class SignupControl extends SignupModel {
 
     public function signupPlayer() {
         parent::insertPlayer($this->email, $this->passwordHash(), $this->playerStatus);
+        $this->playerId = parent::findPlayerId($this->email);
+        if ($this->playerStatus == "Student") {
+            parent::insertStudent($this->playerId);
+        }
     }
 }

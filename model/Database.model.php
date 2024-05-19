@@ -53,4 +53,12 @@ class Database {
         return $result["player_status"];
     }
 
+    protected function findPlayerName($email) {
+        $query = "select player_name from players where email=?;";
+        $stmt = $this->dbConnect()->prepare($query);
+        $stmt->execute([$email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result["player_name"];
+    }
+
 }

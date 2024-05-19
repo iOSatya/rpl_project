@@ -4,7 +4,7 @@ require_once BASE_URL . "model/Database.model.php";
 
 class SignupModel extends Database {
     protected $email = "";
-    public $pwd = "";
+    protected $pwd = "";
     protected $playerStatus = "";
 
     public function __construct($email, $pwd, $playerStatus) {
@@ -17,5 +17,11 @@ class SignupModel extends Database {
         $query = "insert into players (email, pwd, player_status) values (?, ?, ?);";
         $stmt = parent::dbConnect()->prepare($query);
         $stmt->execute([$email, $pwd, $playerStatus]);
+    }
+
+    protected function insertStudent($playerId) {
+        $query = "insert into students (player_id) values (?);";
+        $stmt = parent::dbConnect()->prepare($query);
+        $stmt->execute([$playerId]);
     }
 }
