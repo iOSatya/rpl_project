@@ -1,0 +1,3 @@
+<?php
+
+echo "[INSERT GAME MECHANIC HERE]";

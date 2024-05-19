@@ -12,5 +12,5 @@ if (empty($studentData->storySkip)) {
     new StoryView();
     $studentData->updateStorySkip();
 } else {
-    header("Location: afterstoryBETA.php");
+    header("Location: DELETE_THIS_LATER.php");
 }

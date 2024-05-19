@@ -26,7 +26,7 @@ nextBtn.onclick = function () {
         storyText.textContent = story[x];
     }
     if (x == story.length) {
-        window.location.replace("afterstoryBETA.php");
+        window.location.replace("DELETE_THIS_LATER.php");
     }
     x++;
 }
