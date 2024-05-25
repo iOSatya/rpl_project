@@ -29,7 +29,7 @@ class StudentModel extends Database {
     }
 
     private function findStudentId() {
-        $query = "select student_id from players where player_id=?;";
+        $query = "select student_id from students where player_id=?;";
         $stmt = $this->dbConnect()->prepare($query);
         $stmt->execute([$this->playerId]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
