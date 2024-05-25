@@ -9,8 +9,7 @@ const story = [
 ];
 
 const background = [
-    "images/Fantasy_kingdom_enhanced.png",
-    "images/Kingdom_attacked.png",
+    "images/Fantasy_kingdom.png",
 ];
 
 backgroundImg.style.backgroundImage = `url(${background[0]})`;
@@ -19,9 +18,9 @@ storyText.textContent = story[0];
 let x = 1;
 
 nextBtn.addEventListener("click", function (event) {
-    if (x == 2) {
-        backgroundImg.style.backgroundImage = `url(${background[1]})`;
-    }
+    // if (x == 2) {
+    //     backgroundImg.style.backgroundImage = `url(${background[1]})`;
+    // }
     if (x < story.length) {
         storyText.textContent = story[x];
     }
