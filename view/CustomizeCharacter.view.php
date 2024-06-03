@@ -10,20 +10,39 @@ class CustomizeCharacterView {
             <title>Customize Character</title>
             <!-- Bootstrap CSS -->
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+                .image {
+                    background-image: url('images/Old_wooden_wardrobe.png');
+                    background-size: cover;
+                    background-position: center;
+                    height: 100vh; /* Set height to full viewport height */
+                    width: 100%; /* Set width to full width */
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1; /* Set background behind other content */
+                }
+                body {
+                    color: white; /* Set text color to white */
+                }
+                h1 {
+                    color: white; /* Ensure h1 color is white */
+                }
+                label {
+                    color: white; /* Ensure label color is white */
+                }
+                .form-control {
+                    color: black; /* Input text color should be black for readability */
+                }
+            </style>
         </head>
         <body>
+            <div class="image"></div>
             <div class="container mt-5">
-                <h1 class="text-center mb-4">Customize Your Character</h1>
+                <h1 class="text-center mb-4">Choose Your Character</h1>
                 <div class="row">
                     <div class="col-md-6">
                         <form action="customizeCharacter.php" method="post">
-                            <div class="form-group">
-                                <label for="hair">Hair Style:</label>
-                                <select name="hair" id="hair" class="form-control">
-                                    <option value="style1">Style 1</option>
-                                    <option value="style2">Style 2</option>
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label for="outfit">Outfit:</label>
                                 <select name="outfit" id="outfit" class="form-control">
@@ -37,7 +56,7 @@ class CustomizeCharacterView {
                     <div class="col-md-6">
                         <div class="text-center">
                             <!-- Contoh gambar grafis karakter -->
-                            <img id="character-image" src="images/funny-illustration-3d-cartoon-backpacker.png" alt="Character Graphics" class="img-fluid">
+                            <img id="character-image" src="images/characters/outfit1.png" alt="Character Graphics" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -51,15 +70,14 @@ class CustomizeCharacterView {
             <!-- Script untuk mengubah gambar karakter -->
             <script>
                 $(document).ready(function() {
-                    $('#hair, #outfit').on('change', function() {
+                    $('#outfit').on('change', function() {
                         updateCharacterImage();
                     });
 
                     function updateCharacterImage() {
-                        var hair = $('#hair').val();
                         var outfit = $('#outfit').val();
                         
-                        var imageUrl = 'model/generateCharacterImage.php?hair=' + hair + '&outfit=' + outfit;
+                        var imageUrl = 'images/characters/' + outfit + '.png';
                         $('#character-image').attr('src', imageUrl);
                     }
                 });

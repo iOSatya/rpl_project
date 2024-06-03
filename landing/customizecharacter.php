@@ -17,10 +17,8 @@ $character = new Character(1, $playerData->playerId, 'style1', 'outfit1', 'light
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newAppearance = [
-        'hairStyle' => $_POST['hairStyle'],
-        'outfit' => $_POST['outfit'],
-        'skinColor' => $_POST['skinColor'],
-        'eyeColor' => $_POST['eyeColor'],
+        'outfit' => $_POST['outfit']
+        
     ];
     $character->updateAppearance($newAppearance);
     // Simpan perubahan ke database atau sesi di sini

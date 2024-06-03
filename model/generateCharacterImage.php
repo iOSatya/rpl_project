@@ -1,11 +1,24 @@
 <?php
-$hair = isset($_GET['hair']) ? $_GET['hair'] : 'style1';
-$outfit = isset($_GET['outfit']) ? $_GET['outfit'] : 'outfit1';
+if (isset($_GET['outfit'])) {
+    $outfit = $_GET['outfit'];
+    $characterImages = [
+        'outfit1' => 'images/characters/outfit1.png',
+        'outfit2' => 'images/characters/outfit2.png',
+    ];
 
-// Tentukan path gambar berdasarkan pilihan
-$imagePath = "path/to/images/{$hair}_{$outfit}.png";
+    // Cek apakah outfit yang dipilih ada dalam daftar yang valid
+    if (array_key_exists($outfit, $characterImages)) {
+        // Ambil URL gambar karakter
+        $imageUrl = $characterImages[$outfit];
+        // Set header untuk gambar
+        header("Content-Type: image/png");
+        // Tampilkan gambar
+        readfile($imageUrl);
+        exit;
+    }
+}
 
-// Kirimkan gambar ke browser
-header('Content-Type: image/png');
-readfile($imagePath);
+// Jika outfit tidak valid atau tidak ada, kembalikan 404
+http_response_code(404);
+echo "Not Found";
 ?>

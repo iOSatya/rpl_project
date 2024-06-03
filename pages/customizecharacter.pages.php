@@ -1,8 +1,9 @@
 <?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/config/define.config.php";
 require_once BASE_URL . "view/AddItem.view.php";
-require_once BASE_URL . "view/CustomizeCharacterView.php"; // Sesuaikan dengan nama kelas yang benar
+require_once BASE_URL . "view/CustomizeCharacter.view.php";
 
-class CustomizeCharacter_view extends AddItem {
+class CustomizeCharacterPages extends AddItem {
     public function __construct() {
         $pages = ["customizecharacter.pages.php"];
         parent::__construct($pages);
@@ -18,6 +19,6 @@ class CustomizeCharacter_view extends AddItem {
 }
 
 // Contoh penggunaan:
-$customizer = new CustomizeCharacter_view();
+$customizer = new CustomizeCharacterPages();
 $customizer->render();
 ?>
