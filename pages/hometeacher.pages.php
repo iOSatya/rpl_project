@@ -15,11 +15,13 @@
         </div>
     </a>
     <br class="m-3">
+    </a>
+    <br class="m-3">
     <a href="#" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
         <img src="images/Old_wooden_wardrobe.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Customize Your Character</h5>
-            <p class="card-text">Reimagine your digital avatar by tweaking stats, upgrading traits, and unlocking new capabilities. Design the ideal persona to embark on epic learning quests!</p>
+            <h5 class="card-title">Edit Profile</h5>
+            <p class="card-text">Edit Your Profile</p>
         </div>
     </a>
 </div>
