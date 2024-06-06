@@ -23,11 +23,11 @@
         </div>
     </a>
     <br class="m-3">
-    <a href="" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
-        <img src="images/Old_wooden_wardrobe.png" class="card-img-top" alt="...">
+    <a href="playerprofile.php" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
+        <img src="images/openart-image_9lOqsqkm_1717660059744_raw.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Edit Profile</h5>
-            <p class="card-text">Edit Your Profile</p>
+            <h5 class="card-title">Profile</h5>
+            <p class="card-text">Your Profile</p>
         </div>
     </a>
 </div>

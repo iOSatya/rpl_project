@@ -32,7 +32,8 @@ CREATE TABLE `players` (
   `email` varchar(100) NOT NULL,
   `pwd` varchar(100) NOT NULL,
   `player_status` varchar(10) NOT NULL,
-  `player_name` varchar(255) DEFAULT NULL
+  `player_name` varchar(255) DEFAULT NULL,
+  `avatar` VARCHAR(255) DEFAULT 'default_avatar.png';
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -51,7 +52,8 @@ INSERT INTO `players` (`player_id`, `email`, `pwd`, `player_status`, `player_nam
 CREATE TABLE `students` (
   `student_id` int(11) UNSIGNED NOT NULL,
   `player_id` int(11) UNSIGNED DEFAULT NULL,
-  `story_skip` tinyint(1) DEFAULT 0
+  `story_skip` tinyint(1) DEFAULT 0,
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -104,6 +106,7 @@ ALTER TABLE `students`
 ALTER TABLE `students`
   ADD CONSTRAINT `students_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`player_id`) ON DELETE CASCADE;
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
