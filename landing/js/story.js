@@ -3,13 +3,16 @@ const storyText = document.getElementById("storyText");
 const nextBtn = document.getElementById("nextBtn");
 
 const story = [
-    "This is Story 1",
-    "This is Story 2",
-    "This is Story 3",
+    "Di sebuah dunia yang penuh dengan misteri dan keajaiban",
+    "Terdapat sebuah kerajaan yang disebut Algoria.",
+    "Algoria dikenal sebagai kerajaan yang makmur dan sejahtera",
+    "berkat kecerdasan dan kemampuan algoritma yang mereka miliki.",
+    'Namun, kedamaian itu terancam ketika kekuatan gelap bernama "Bugmalware" menyerang Algoria.',
 ];
 
 const background = [
     "images/Fantasy_kingdom.png",
+    "images/Kingdom_attacked.png"
 ];
 
 backgroundImg.style.backgroundImage = `url(${background[0]})`;
@@ -18,9 +21,9 @@ storyText.textContent = story[0];
 let x = 1;
 
 nextBtn.addEventListener("click", function (event) {
-    // if (x == 2) {
-    //     backgroundImg.style.backgroundImage = `url(${background[1]})`;
-    // }
+    if (x == 4) {
+        backgroundImg.style.backgroundImage = `url(${background[1]})`;
+    }
     if (x < story.length) {
         storyText.textContent = story[x];
     }
