@@ -56,7 +56,7 @@ class ProfileView {
                     <div class="col-md-6 offset-md-3">
                         <div class="card">
                             <div class="card-body text-center">
-                                <img id="avatarImg" src="images/<?= $player['avatar'] ?>" alt="Avatar" class="avatar">
+                                <img id="avatarImg" src="images/avatar/<?= $player['avatar'] ?>" alt="Avatar" class="avatar">
                                 <div class="mt-3 mb-3">
                                     <select id="avatarSelect" class="form-control">
                                         <option value="avatar1.png">Avatar 1</option>
