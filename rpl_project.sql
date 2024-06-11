@@ -26,58 +26,45 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `players`
 --
-
 CREATE TABLE `players` (
-  `player_id` int(11) UNSIGNED NOT NULL,
+  `player_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
   `pwd` varchar(100) NOT NULL,
   `player_status` varchar(10) NOT NULL,
   `player_name` varchar(255) DEFAULT NULL,
+<<<<<<< HEAD
+  `avatar` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`player_id`)
+=======
   `avatar` VARCHAR(255) DEFAULT NULL
+>>>>>>> 23bc4c5712d78677120c52172bedbe52d3a4559e
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `players`
 --
-
-INSERT INTO `players` (`player_id`, `email`, `pwd`, `player_status`, `player_name`, `avatar`) VALUES
-(24, 'student@email.com', '$2y$13$fZQHVcIq0x3eldvNgSvXbuSGN2yqX5NFygYE6JGs3OarIcITdOA/.', 'Student', NULL, NULL);
+INSERT INTO `players` (`player_id`, `email`, `pwd`, `player_status`, `player_name`) VALUES
+(24, 'student@email.com', '$2y$13$fZQHVcIq0x3eldvNgSvXbuSGN2yqX5NFygYE6JGs3OarIcITdOA/.', 'Student', NULL);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `students`
 --
-
 CREATE TABLE `students` (
-  `student_id` int(11) UNSIGNED NOT NULL,
+  `student_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `player_id` int(11) UNSIGNED DEFAULT NULL,
-  `story_skip` tinyint(1) DEFAULT 0
+  `story_skip` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`student_id`),
+  KEY `player_id` (`player_id`),
+  CONSTRAINT `students_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`player_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `students`
 --
-
 INSERT INTO `students` (`student_id`, `player_id`, `story_skip`) VALUES
 (1, 24, 1);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `players`
---
-ALTER TABLE `players`
-  ADD PRIMARY KEY (`player_id`);
-
---
--- Indexes for table `students`
---
-ALTER TABLE `students`
-  ADD PRIMARY KEY (`student_id`),
-  ADD KEY `player_id` (`player_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -95,20 +82,8 @@ ALTER TABLE `players`
 ALTER TABLE `students`
   MODIFY `student_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `students`
---
-ALTER TABLE `students`
-  ADD CONSTRAINT `students_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`player_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-ALTER TABLE `players`
-ADD COLUMN `level` INT DEFAULT 1;
