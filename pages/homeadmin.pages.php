@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center align-items-center bg-dark" style="height: 100vh;">
-    <a href="#" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
+    <a href="inputsoal.php" class="card link-underline link-underline-opacity-0" style="width: 18rem; height: 75vh;">
         <img src="images/Fantasy_kingdom.png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Craft Your Epic Quest</h5>
