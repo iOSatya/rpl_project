@@ -1,23 +1,25 @@
 <?php
-require_once BASE_URL . "config/db.config.php";
+
+require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/config/db.config.php";
 
 class ProfileModel {
-    protected $db;
+    private $db;
 
-    public function __construct() {
-        $this->db = Database::getInstance();
+    public function __construct($db) {
+        $this->db = $db;
     }
 
     public function getPlayerProfile($playerId) {
-        $sql = "SELECT p.player_name, p.email, p.player_status, s.story_skip
-                FROM players p
-                LEFT JOIN students s ON p.player_id = s.player_id
-                WHERE p.player_id = :player_id";
-        $params = [
-            ':player_id' => $playerId
-        ];
-        $result = $this->db->queryOne($sql, $params);
-        return $result;
+        $sql = "SELECT * FROM players WHERE player_id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$playerId]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function getStudentProfile($playerId) {
+        $sql = "SELECT * FROM students WHERE player_id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$playerId]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
-?>

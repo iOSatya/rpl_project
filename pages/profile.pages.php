@@ -1,40 +1,26 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/config/define.config.php";
-require_once BASE_URL . "view/AddItem.view.php";
-require_once BASE_URL . "view/ProfileView.php";
-require_once BASE_URL . "landing/PlayerProfile.php";
 
-class ProfilePages extends AddItem {
+require_once $_SERVER["DOCUMENT_ROOT"] . "/rpl_project/config/db.config.php";
+require_once BASE_URL . "view/Profile.view.php";
+require_once BASE_URL . "model/Profile.model.php";
+
+class ProfilePages {
     private $playerId;
     private $db;
 
     public function __construct($playerId, $db) {
         $this->playerId = $playerId;
         $this->db = $db;
-        $pages = ["profile.pages.php"];
-        parent::__construct($pages);
-        $this->getHead();
-        $this->render();
-        $this->getFoot();
     }
 
     public function render() {
-        $profile = new PlayerProfile($this->db);
-        $player = $profile->getPlayerProfile($this->playerId);
-        $student = $profile->getStudentProfile($this->playerId);
+        // Memuat profil pemain dari model
+        $profileModel = new ProfileModel($this->db);
+        $player = $profileModel->getPlayerProfile($this->playerId);
+        $student = $profileModel->getStudentProfile($this->playerId);
 
-        if ($player === false || $student === false) {
-            die("Player or student data not found.");
-        }
-
-        $view = new ProfileView();
-        $view->render($player, $student);
+        // Memuat halaman profil dari view
+        $profileView = new ProfileView();
+        $profileView->render($player, $student);
     }
 }
-
-// Contoh penggunaan:
-require_once BASE_URL . "config/config.php"; // File config yang menghubungkan ke database
-$playerId = 24; // Ganti dengan ID dinamis sesuai kebutuhan
-$customizer = new ProfilePages($playerId, $db);
-$customizer->render();
-?>
