@@ -28,12 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `players` (
-  `player_id` int(11) UNSIGNED NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `pwd` varchar(100) NOT NULL,
-  `player_status` varchar(10) NOT NULL,
-  `player_name` varchar(255) DEFAULT NULL,
-  `avatar` VARCHAR(255) DEFAULT 'default_avatar.png';
+  `player_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `player_status` ENUM('active', 'inactive', 'banned') NOT NULL DEFAULT 'active',
+  `player_name` VARCHAR(255) DEFAULT NULL,
+  `avatar` VARCHAR(255) DEFAULT 'default_avatar.png',
+  PRIMARY KEY (`player_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
