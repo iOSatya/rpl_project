@@ -2,6 +2,7 @@
             <form action="includes/signup.inc.php" method="post" class="d-flex flex-column bg-white bg-opacity-10 p-4">
                 <h2>Signup</h2>
                 <input name="email" type="text" placeholder="E-Mail" class="form-control mb-2">
+                <input name="username" type="text" placeholder="Username" class="form-control mb-2">
                 <input name="pwd" type="password" placeholder="Password" class="form-control mb-2">
                 <input name="confirmPwd" type="password" placeholder="Confirm Password" class="form-control mb-2">
 
