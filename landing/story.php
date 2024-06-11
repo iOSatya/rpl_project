@@ -5,6 +5,10 @@ require_once BASE_URL . "config/session.config.php";
 require_once BASE_URL . "model/Student.model.php";
 require_once BASE_URL . "view/Story.view.php";
 
+if (!isset($_SESSION["playerData"])) {
+    header("Location: ../index.php");
+    die();
+}
 
 $studentData = unserialize($_SESSION["studentData"]);
 
