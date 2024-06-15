@@ -32,19 +32,16 @@ CREATE TABLE `players` (
   `pwd` varchar(100) NOT NULL,
   `player_status` varchar(10) NOT NULL,
   `player_name` varchar(255) DEFAULT NULL,
-<<<<<<< HEAD
   `avatar` varchar(255) DEFAULT NULL,
+  `level` INT DEFAULT 1, -- Tambahkan kolom level dengan default 1
   PRIMARY KEY (`player_id`)
-=======
-  `avatar` VARCHAR(255) DEFAULT NULL
->>>>>>> 23bc4c5712d78677120c52172bedbe52d3a4559e
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `players`
 --
-INSERT INTO `players` (`player_id`, `email`, `pwd`, `player_status`, `player_name`) VALUES
-(24, 'student@email.com', '$2y$13$fZQHVcIq0x3eldvNgSvXbuSGN2yqX5NFygYE6JGs3OarIcITdOA/.', 'Student', NULL);
+INSERT INTO `players` (`player_id`, `email`, `pwd`, `player_status`, `player_name`, `level`) VALUES
+(24, 'student@email.com', '$2y$13$fZQHVcIq0x3eldvNgSvXbuSGN2yqX5NFygYE6JGs3OarIcITdOA/.', 'Student', NULL, 1); -- Pastikan level ditetapkan
 
 -- --------------------------------------------------------
 

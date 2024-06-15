@@ -2,6 +2,9 @@
 
 class ProfileView {
     public function render($player, $student) {
+        // Ambil avatar default
+        $currentAvatar = $player['avatar'] ?: 'avatar1.png';
+        $level = $player['level'] ?? 'Tidak diketahui'; // Mengambil level dengan default 'Tidak diketahui' jika tidak ada
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -9,31 +12,30 @@ class ProfileView {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Player Profile</title>
-            <!-- Bootstrap CSS -->
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
             <style>
                 .image {
                     background-image: url('images/Old_wooden_wardrobe.png');
                     background-size: cover;
                     background-position: center;
-                    height: 100vh; /* Set height to full viewport height */
-                    width: 100%; /* Set width to full width */
+                    height: 100vh;
+                    width: 100%;
                     position: absolute;
                     top: 0;
                     left: 0;
-                    z-index: -1; /* Set background behind other content */
+                    z-index: -1;
                 }
                 body {
-                    color: white; /* Set text color to white */
+                    color: white;
                 }
                 h1 {
-                    color: white; /* Ensure h1 color is white */
+                    color: white;
                 }
                 label {
-                    color: white; /* Ensure label color is white */
+                    color: white;
                 }
                 .form-control {
-                    color: black; /* Input text color should be black for readability */
+                    color: black;
                 }
                 .avatar {
                     width: 150px;
@@ -56,16 +58,16 @@ class ProfileView {
                     <div class="col-md-6 offset-md-3">
                         <div class="card">
                             <div class="card-body text-center">
-                                <img id="avatarImg" src="images/avatar/<?= $player['avatar'] ?>" alt="Avatar" class="avatar">
+                                <img id="avatarImg" src="../landing/images/avatar/<?= htmlspecialchars($currentAvatar) ?>" alt="Avatar" class="avatar">
                                 <div class="mt-3 mb-3">
                                     <select id="avatarSelect" class="form-control">
-                                        <option value="avatar1.png">Avatar 1</option>
-                                        <option value="avatar2.png">Avatar 2</option>
-                                        <option value="avatar3.png">Avatar 3</option>
+                                        <option value="avatar1.png" <?= $currentAvatar == 'avatar1.png' ? 'selected' : '' ?>>Avatar 1</option>
+                                        <option value="avatar2.png" <?= $currentAvatar == 'avatar2.png' ? 'selected' : '' ?>>Avatar 2</option>
+                                        <option value="avatar3.png" <?= $currentAvatar == 'avatar3.png' ? 'selected' : '' ?>>Avatar 3</option>
                                     </select>
                                     <button id="changeAvatarBtn" class="btn btn-primary mt-2">Change Avatar</button>
                                 </div>
-                                <h5 class="card-title mt-3">Username: <?= $player['player_name'] ?></h5>
+                                <h5 class="card-title mt-3">Username: <?= htmlspecialchars($player['player_name']) ?></h5>
                             </div>
                         </div>
                     </div>
@@ -77,32 +79,29 @@ class ProfileView {
                                 <h5 class="card-title">Player Information</h5>
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <p><?= $player['email'] ?></p>
+                                    <p><?= htmlspecialchars($player['email']) ?></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status:</label>
-                                    <p><?= $player['player_status'] ?></p>
+                                    <p><?= htmlspecialchars($player['player_status']) ?></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="level">Level:</label>
-                                    <p><?= $player['level'] ?></p>
+                                    <p><?= htmlspecialchars($level) ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- jQuery dan Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js" integrity="sha384-oWtU9HvKVH1WnVzI4F4+hEV0YHbe5sZuT2iU/rZ+Vv2IaxVasDUjKG0sNHpdZUZ" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2n0EfMuhscB+6PU/iD9P6n1OdJ2uqFo" crossorigin="anonymous"></script>
-
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <script>
                 $(document).ready(function() {
                     $('#avatarSelect').change(function() {
                         var selectedAvatar = $(this).val();
-                        $('#avatarImg').attr('src', 'images/' + selectedAvatar);
+                        $('#avatarImg').attr('src', '../landing/images/avatar/' + selectedAvatar);
                     });
 
                     $('#changeAvatarBtn').click(function() {
@@ -113,6 +112,8 @@ class ProfileView {
                             data: { avatar: selectedAvatar },
                             success: function(response) {
                                 console.log(response);
+                                // Perbarui gambar avatar dengan avatar yang baru
+                                $('#avatarImg').attr('src', '../landing/images/avatar/' + selectedAvatar);
                             },
                             error: function(xhr, status, error) {
                                 console.error(error);
@@ -126,5 +127,4 @@ class ProfileView {
         <?php
     }
 }
-
 ?>
