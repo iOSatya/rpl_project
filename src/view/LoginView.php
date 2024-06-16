@@ -5,7 +5,7 @@
       <span class="fw-semibold fs-3">Login</span>
       <input type="text" class="form-control" placeholder="Username">
       <input type="password" class="form-control" placeholder="Password">
-      <a href="./SignupView.php">Create Account</a>
+      <a class="align-self-end" href="./SignupView.php">Create Account</a>
       <button class="btn btn-success">Login</button>
     </form>
   </div>

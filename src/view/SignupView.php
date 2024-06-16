@@ -1,13 +1,25 @@
+<?php require_once "../config/config.php"; ?>
 <?php require_once "./HeaderView.php"; ?>
   
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
-    <form action="" method="post" class="d-flex flex-column">
+    <form class="d-flex flex-column" action="../controller/SignupController.php" method="post">
       <span class="fw-semibold fs-3">Signup</span>
-      <input type="text" class="form-control" placeholder="Username">
-      <input type="password" class="form-control" placeholder="Password">
-      <a href="./LoginView.php">Login</a>
+      <input class="form-control" type="text" name="username" placeholder="Username">
+      <input class="form-control" type="text" name="userFullName" placeholder="Full Name">
+      <input class="form-control" type="password" name="userPassword" placeholder="Password">
+      <select class="form-select" name="userStatus">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+      </select>
+      <a class="align-self-end" href="./LoginView.php">Login</a>
       <button class="btn btn-success">Signup</button>
+
+      <?php if (isset($_SESSION["errorMessage"])) { ?>
+        <span><?= $_SESSION["errorMessage"]; ?></span>
+      <?php } ?>
+
     </form>
   </div>
 
 <?php require_once "./FooterView.php"; ?>
+<?php unset($_SESSION["errorMessage"]); ?>
