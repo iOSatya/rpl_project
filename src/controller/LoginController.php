@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
       if ($model->authenticateUser($username, $userPassword)) {
         $_SESSION["userData"] = $model->getUserData($username);
-        print_r($_SESSION["userData"]["userFullName"]);
+        header("Location: ../view/HomeView.php");
       } else {
         $_SESSION["errorMessage"] = "Wrong Username/Password!";
         header("Location: ../view/LoginView.php");
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       }
       
     }
-    
+
   } catch (PDOException $e) {
     echo $e->getMessage();
     die();

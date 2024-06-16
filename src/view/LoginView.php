@@ -1,5 +1,7 @@
-<?php require_once "../config/config.php"; ?>
-<?php require_once "./HeaderView.php"; ?>
+<?php
+  require_once "../config/config.php";
+  require_once "./HeaderView.php";
+?>
   
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
     <form class="d-flex flex-column" action="../controller/LoginController.php" method="post">
@@ -16,5 +18,7 @@
     </form>
   </div>
 
-<?php require_once "./FooterView.php"; ?>
-<?php unset($_SESSION["errorMessage"]); ?>
+<?php
+  require_once "./FooterView.php";
+  unset($_SESSION["errorMessage"]);
+?>
