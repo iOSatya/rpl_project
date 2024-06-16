@@ -10,7 +10,7 @@ class LoginModel extends DatabaseModel {
 
   function authenticateUser($username, $userPassword) {
     $query = "SELECT username FROM users WHERE username=? AND userPassword=?;";
-    $stmt = $this->pdo()->prepare($query);
+    $stmt = $this->pdo->prepare($query);
     $stmt->execute([$username, $userPassword]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result["username"];
@@ -18,7 +18,7 @@ class LoginModel extends DatabaseModel {
 
   function getUserData($username) {
     $query = "SELECT * FROM users WHERE username=?";
-    $stmt = $this->pdo()->prepare($query);
+    $stmt = $this->pdo->prepare($query);
     $stmt->execute([$username]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result[0];
