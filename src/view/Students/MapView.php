@@ -4,7 +4,7 @@
 ?>
 
   <div>
-    <a class="btn btn-outline-secondary" href="#">Rhinelands</a>
+    <a class="btn btn-outline-secondary" href="./Rhinelands.php">Rhinelands</a>
     <a class="btn btn-outline-secondary" href="#">Yellow River Basin</a>
     <a class="btn btn-outline-secondary" href="#">Shikoku Islands</a>
     <a class="btn btn-outline-secondary" href="#">Aryan Deserts</a>
