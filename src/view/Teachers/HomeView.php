@@ -5,7 +5,7 @@
 
   <div>
     <a class="btn btn-danger" href="./../../controller/LogoutController.php">Logout</a>
-    <a href="./CreateAssignmentView.php">Create Assignment</a>
+    <a class="btn btn-primary" href="./CreateAssignmentView.php">Create Assignment</a>
   </div>
 
 <?php
