@@ -4,6 +4,7 @@
 ?>
 
   <div>
+    <a class="btn btn-danger" href="./../../controller/LogoutController.php">Logout</a>
     <a href="./MapView.php">Start Game</a>
   </div>
 

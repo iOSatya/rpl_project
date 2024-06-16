@@ -16,5 +16,13 @@ class DatabaseModel {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result["userId"];
   }
+
+  function getTeacherId($userId) {
+    $query = "SELECT teacherId FROM teachers WHERE userId=?;";
+    $stmt = $this->pdo()->prepare($query);
+    $stmt->execute([$userId]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result["teacherId"];
+  }
   
 }

@@ -4,6 +4,7 @@
 ?>
 
   <div>
+    <a class="btn btn-danger" href="./../../controller/LogoutController.php">Logout</a>
     <a href="./CreateAssignmentView.php">Create Assignment</a>
   </div>
 
