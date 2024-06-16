@@ -9,8 +9,9 @@
 
 ?>
 
-  <div>
-    <?= $assignment["question"]; ?>
+  <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+    <span><?= $assignment["question"]; ?></span>
+    
   </div>
 
 <?php
