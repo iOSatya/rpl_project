@@ -22,7 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
       if ($model->authenticateUser($username, $userPassword)) {
         $_SESSION["userData"] = $model->getUserData($username);
-        header("Location: ../view/HomeView.php");
+        if ($_SESSION["userData"]["userStatus"] === "student") {
+          header("Location: ../view/Students/HomeView.php");
+          die();
+        } else if ($_SESSION["userData"]["userStatus"] === "teacher") {
+          header("Location: ../view/Teachers/HomeView.php");
+          die();
+        }
       } else {
         $_SESSION["errorMessage"] = "Wrong Username/Password!";
         header("Location: ../view/LoginView.php");
