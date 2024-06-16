@@ -1,5 +1,7 @@
-<?php require_once "../config/config.php"; ?>
-<?php require_once "./HeaderView.php"; ?>
+<?php
+  require_once "../config/config.php";
+  require_once "./HeaderView.php";
+?>
   
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
     <form class="d-flex flex-column" action="../controller/SignupController.php" method="post">
@@ -11,15 +13,17 @@
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
       </select>
-      <a class="align-self-end" href="./LoginView.php">Login</a>
+      <a class="align-self-end" href="./LoginView.php">I already have an account</a>
       <button class="btn btn-success">Signup</button>
 
       <?php if (isset($_SESSION["errorMessage"])) { ?>
-        <span><?= $_SESSION["errorMessage"]; ?></span>
+        <span class="text-danger"><?= $_SESSION["errorMessage"]; ?></span>
       <?php } ?>
 
     </form>
   </div>
 
-<?php require_once "./FooterView.php"; ?>
-<?php unset($_SESSION["errorMessage"]); ?>
+<?php
+  require_once "./FooterView.php";
+  unset($_SESSION["errorMessage"]);
+?>
