@@ -6,9 +6,9 @@
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
     <form class="d-flex flex-column" action="../controller/SignupController.php" method="post">
       <span class="fw-semibold fs-3">Signup</span>
-      <input class="form-control" type="text" name="username" placeholder="Username">
-      <input class="form-control" type="text" name="userFullName" placeholder="Full Name">
-      <input class="form-control" type="password" name="userPassword" placeholder="Password">
+      <input class="form-control" name="username" type="text" placeholder="Username">
+      <input class="form-control" name="userFullName" type="text" placeholder="Full Name">
+      <input class="form-control" name="userPassword" type="password" placeholder="Password">
       <select class="form-select" name="userStatus">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
