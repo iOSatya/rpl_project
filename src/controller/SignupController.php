@@ -19,10 +19,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       header("Location: ../view/SignupView.php");
       die();
     } else {
+      $checkUsername = $model->getUsername($username);
+    }
+
+    if ($checkUsername === $username) {
+      $_SESSION["errorMessage"] = "Username Already Exist!";
+      header("Location: ../view/SignupView.php");
+      die();
+    } else {
       $model->signupUser($username, $userFullName, $userPassword, $userStatus);
       header("Location: ../view/LoginView.php");
       die();
     }
+
   } catch (PDOException $e) {
     echo $e->getMessage();
     die();

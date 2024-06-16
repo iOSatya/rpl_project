@@ -6,7 +6,7 @@
 <?php if ($_SESSION["userData"]["userStatus"] === "student") { ?>
 
   <div>
-    <a href="#">Start Game</a>
+    <a href="./maps/MapView.php">Start Game</a>
   </div>
 
 <?php } ?>
