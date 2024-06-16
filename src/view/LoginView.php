@@ -1,2 +1,5 @@
 <?php require_once "./HeaderView.php"; ?>
-  <div>Test</div>
+  
+  
+
+<?php require_once "./FooterView.php"; ?>
