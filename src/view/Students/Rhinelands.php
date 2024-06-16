@@ -11,6 +11,24 @@
 
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
     <span><?= $assignment["question"]; ?></span>
+    <form class="" action="./../../controller/MapController.php" method="post">
+      <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
+      <input type="hidden" name="mapRegion" value="Rhinelands">
+
+      <input class="btn-check" type="radio" id="answerA" name="userAnswer" value="A">
+      <label class="btn" for="answerA"><?= $assignment["answerA"]; ?></label>
+
+      <input class="btn-check" type="radio" id="answerB" name="userAnswer" value="B">
+      <label class="btn" for="answerB"><?= $assignment["answerB"]; ?></label>
+
+      <input class="btn-check" type="radio" id="answerC" name="userAnswer" value="C">
+      <label class="btn" for="answerC"><?= $assignment["answerC"]; ?></label>
+
+      <input class="btn-check" type="radio" id="answerD" name="userAnswer" value="D">
+      <label class="btn" for="answerD"><?= $assignment["answerD"]; ?></label>
+
+      <button class="btn btn-outline-warning" type="submit">Submit</button>
+    </form>
     
   </div>
 

@@ -3,7 +3,7 @@
   require_once "./../HeaderView.php";
 ?>
 
-  <div>
+  <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
     <a class="btn btn-outline-secondary" href="./Rhinelands.php">Rhinelands</a>
     <a class="btn btn-outline-secondary" href="#">Yellow River Basin</a>
     <a class="btn btn-outline-secondary" href="#">Shikoku Islands</a>
