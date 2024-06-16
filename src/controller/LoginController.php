@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       die();
     } else {
       if ($model->authenticateUser($username, $userPassword)) {
-        echo "Success!";
+        $_SESSION["userData"] = $model->getUserData($username);
+        print_r($_SESSION["userData"]["userPassword"]);
       } else {
         $_SESSION["errorMessage"] = "Wrong Username/Password!";
         header("Location: ../view/LoginView.php");

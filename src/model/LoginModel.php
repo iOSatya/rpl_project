@@ -16,4 +16,12 @@ class LoginModel extends DatabaseModel {
     return $result["username"];
   }
 
+  function getUserData($username) {
+    $query = "SELECT * FROM users WHERE username=?";
+    $stmt = $this->pdo()->prepare($query);
+    $stmt->execute([$username]);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result[0];
+  }
+
 }
