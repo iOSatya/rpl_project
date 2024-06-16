@@ -15,4 +15,12 @@ class MapModel extends DatabaseModel {
     return $result;
   }
 
+  function getAssignmentById($assignmentId) {
+    $query = "SELECT * FROM assignments WHERE assignmentId=?;";
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute([$assignmentId]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+  }
+
 }

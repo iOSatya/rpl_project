@@ -10,7 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $userAnswer = $_POST["userAnswer"];
   $mapRegion = $_POST["mapRegion"];
 
-  echo $assignmentId . $userAnswer . $mapRegion;
+  $model = new MapModel();
+  $assignment = $model->getAssignmentById($assignmentId);
+
+  if ($userAnswer == $assignment["correctAnswer"]) {
+    echo "Your answer is correct!";
+  } else {
+    echo "Your answer is wrong!";
+  }
 
 } else {
   header("Location: ../view/MapView.php");
