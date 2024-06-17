@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   if ($_SESSION["playerHp"] <= 0) {
-    $_SESSION["playerHp"] = 100;
-    $_SESSION["bossHp"] = 100;
+    unset($_SESSION["playerHp"]);
+    unset($_SESSION["bossHp"]);
     header("Location: ../view/Students/MapView.php");
     die();
   } else if ($_SESSION["bossHp"] <= 0) {
-    $_SESSION["playerHp"] = 100;
-    $_SESSION["bossHp"] = 100;
+    unset($_SESSION["playerHp"]);
+    unset($_SESSION["bossHp"]);
     header("Location: ../view/Students/MapView.php");
     die();
   }

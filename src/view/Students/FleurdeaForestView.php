@@ -24,7 +24,7 @@
     <span><?= $assignment["question"]; ?></span>
     <form class="" action="./../../controller/MapController.php" method="post">
       <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
-      <input type="hidden" name="mapRegion" value="FleurDeLisValley">
+      <input type="hidden" name="mapRegion" value="FleurdeaForest">
 
       <input class="btn-check" type="radio" id="answerA" name="userAnswer" value="A">
       <label class="btn" for="answerA"><?= $assignment["answerA"]; ?></label>
