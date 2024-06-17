@@ -26,4 +26,14 @@ class StudentModel {
     return $result["mapLevel"];
   }
 
+  static function updateMapLevel($mapLevel, $studentId) {
+    $DatabaseModel = new DatabaseModel();
+    $pdo = $DatabaseModel->pdo();
+
+    $query = "UPDATE students SET mapLevel=? WHERE studentId=?;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$mapLevel, $studentId]);
+
+  }
+
 }
