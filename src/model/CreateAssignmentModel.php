@@ -12,4 +12,5 @@ class CreateAssignmentModel extends DatabaseModel {
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$teacherId, $question, $answerA, $answerB, $answerC, $answerD, $correctAnswer, $assignmentLevel]);
   }
+  
 }

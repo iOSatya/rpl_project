@@ -2,6 +2,7 @@
 
 require_once "../config/config.php";
 require_once "../model/DatabaseModel.php";
+require_once "../model/TeacherModel.php";
 require_once "../model/CreateAssignmentModel.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -21,8 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: ./../view/Teachers/CreateAssignmentView.php");
     die();
   } else {
-    $teacherId = $model->getTeacherId($_SESSION["userData"]["userId"]);
-    $model->inputAssignment($teacherId, $question, $answerA, $answerB, $answerC, $answerD, $correctAnswer, $assignmentLevel);
+    $model->inputAssignment($_SESSION["teacherId"], $question, $answerA, $answerB, $answerC, $answerD, $correctAnswer, $assignmentLevel);
     header("Location: ./../view/Teachers/CreateAssignmentView.php");
     die();
   }

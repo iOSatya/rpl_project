@@ -14,7 +14,7 @@ class SignupModel extends DatabaseModel {
     $stmt = $this->pdo->prepare($query);
     $stmt->execute([$username, $userFullName, $userPassword, $userStatus]);
 
-    $userId = parent::getUserId($username);
+    $userId = parent::getUserData($username)["userId"];
 
     if ($userStatus === "student") {
       $query = "INSERT INTO students (userId) VALUES (?);";

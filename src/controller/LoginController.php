@@ -2,7 +2,10 @@
 
 require_once "../config/config.php";
 require_once "../model/DatabaseModel.php";
+require_once "../model/TeacherModel.php";
+require_once "../model/StudentModel.php";
 require_once "../model/LoginModel.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -21,11 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
 
       if ($model->authenticateUser($username, $userPassword)) {
-        $_SESSION["userData"] = $model->getUserData($username);
-        if ($_SESSION["userData"]["userStatus"] === "student") {
+        $userData = $model->getUserData($username);
+        $_SESSION["userId"] = $userData["userId"];
+        if ($userData["userStatus"] === "student") {
+          $_SESSION["studentId"] = StudentModel::getStudentId($userData["userId"]);
           header("Location: ../view/Students/HomeView.php");
           die();
-        } else if ($_SESSION["userData"]["userStatus"] === "teacher") {
+        } else if ($userData["userStatus"] === "teacher") {
+          $_SESSION["teacherId"] = TeacherModel::getTeacherId($userData["userId"]);
           header("Location: ../view/Teachers/HomeView.php");
           die();
         }

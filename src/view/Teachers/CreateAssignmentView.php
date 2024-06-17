@@ -2,8 +2,11 @@
   require_once "./../../config/config.php";
   require_once "./../HeaderView.php";
 ?>
-
+  
+  <a class="btn btn-primary" href="./HomeView.php">Home</a>
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+
+    
     <form class="d-flex" action="./../../controller/CreateAssignmentController.php" method="post">
 
       <textarea class="form-control" name="question"></textarea>

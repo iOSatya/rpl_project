@@ -26,7 +26,7 @@
       <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
       <input type="hidden" name="mapRegion" value="YellowRiverBasin">
 
-      <input class="btn-check" type="radio" id="answerA" name="userAnswer" value="A" checked>
+      <input class="btn-check" type="radio" id="answerA" name="userAnswer" value="A">
       <label class="btn" for="answerA"><?= $assignment["answerA"]; ?></label>
 
       <input class="btn-check" type="radio" id="answerB" name="userAnswer" value="B">
