@@ -14,12 +14,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $assignment = $model->getAssignmentById($assignmentId);
 
   if ($userAnswer == $assignment["correctAnswer"]) {
-    echo "Your answer is correct!";
+    $_SESSION["bossHp"] -= 20;
   } else {
-    echo "Your answer is wrong!";
+    $_SESSION["playerHp"] -= 20;
   }
 
+  if ($_SESSION["playerHp"] <= 0) {
+    $_SESSION["playerHp"] = 100;
+    $_SESSION["bossHp"] = 100;
+    header("Location: ../view/Students/MapView.php");
+    die();
+  } else if ($_SESSION["bossHp"] <= 0) {
+    $_SESSION["playerHp"] = 100;
+    $_SESSION["bossHp"] = 100;
+    header("Location: ../view/Students/MapView.php");
+    die();
+  }
+
+  header("Location: ../view/Students/" . $mapRegion . "View.php");
+
 } else {
-  header("Location: ../view/MapView.php");
+  header("Location: ../view/Students/MapView.php");
   die();
 }

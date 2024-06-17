@@ -5,17 +5,28 @@
   require_once "./../../model/MapModel.php";
 
   $model = new MapModel();
-  $assignment = $model->getAssignment(1);
+  $assignment = $model->getAssignment(5);
+
+  if (!isset($_SESSION["playerHp"]) || !isset($_SESSION["bossHp"])) {
+    $_SESSION["playerHp"] = 100;
+    $_SESSION["bossHp"] = 100;
+  }
 
 ?>
 
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+
+    <div>
+      <span><?= $_SESSION["playerHp"]; ?></span>
+      <span><?= $_SESSION["bossHp"]; ?></span>
+    </div>
+
     <span><?= $assignment["question"]; ?></span>
     <form class="" action="./../../controller/MapController.php" method="post">
       <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
-      <input type="hidden" name="mapRegion" value="Rhinelands">
+      <input type="hidden" name="mapRegion" value="FleurDeLisValley">
 
-      <input class="btn-check" type="radio" id="answerA" name="userAnswer" value="A">
+      <input class="btn-check" type="radio" id="answerA" name="userAnswer" value="A" checked>
       <label class="btn" for="answerA"><?= $assignment["answerA"]; ?></label>
 
       <input class="btn-check" type="radio" id="answerB" name="userAnswer" value="B">
