@@ -30,20 +30,20 @@
 
   <script>
 
-  $("#form").hide().fadeIn();
-
-  $("a").on("click", function() {
-    $("#form").fadeOut(function() {
-      $(location).prop("href", "./LoginView.php");
+    $("#form").hide().fadeIn();
+          
+    $("a").on("click", function() {
+      $("#form").fadeOut(function() {
+        $(location).prop("href", "./LoginView.php");
+      });
     });
-  });
 
   </script>
 
   <style>
     #main {
       height: 100vh;
-      background: url('./images/fantasy_valley2.png');
+      background: url('./images/fantasy_valley.png');
       background-size: cover;
       background-position: 0px -400px;
       background-repeat: no-repeat;
