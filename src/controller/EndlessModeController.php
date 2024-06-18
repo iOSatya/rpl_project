@@ -20,7 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   if ($_SESSION["playerHp"] <= 0) {
 
-    
+    $highScore = StudentModel::getHighScore($_SESSION["studentId"]);
+
+    if ($_SESSION["highScore"] > $highScore) {
+      StudentModel::updateHighScore($_SESSION["highScore"], $_SESSION["studentId"]);
+    }
 
     unset($_SESSION["playerHp"]);
     unset($_SESSION["highScore"]);

@@ -5,7 +5,7 @@
   require_once "./../../model/StudentModel.php";
 
   $mapLevel = StudentModel::getMapLevel($_SESSION["studentId"]);
-
+  $highScore = StudentModel::getHighScore($_SESSION["studentId"]);
   
 ?>
 
@@ -21,6 +21,10 @@
     <?php if ($mapLevel == 8) { ?>
       <a href="./EndlessModeView.php"><button class="btn btn-warning">Algoria</button></a>
     <?php } ?>
+
+
+    <span>High Score: <?= $highScore; ?></span>
+
   </div>
 
 <?php

@@ -33,7 +33,27 @@ class StudentModel {
     $query = "UPDATE students SET mapLevel=? WHERE studentId=?;";
     $stmt = $pdo->prepare($query);
     $stmt->execute([$mapLevel, $studentId]);
+  }
 
+  static function getHighScore($studentId) {
+    $DatabaseModel = new DatabaseModel();
+    $pdo = $DatabaseModel->pdo();
+
+    $query = "SELECT highScore FROM students WHERE studentId=?;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$studentId]);
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result["highScore"];
+  }
+
+  static function updateHighScore($highScore, $studentId) {
+    $DatabaseModel = new DatabaseModel();
+    $pdo = $DatabaseModel->pdo();
+
+    $query = "UPDATE students SET highScore=? WHERE studentId=?;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$highScore, $studentId]);
   }
 
 }
