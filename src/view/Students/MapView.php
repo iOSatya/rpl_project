@@ -22,7 +22,6 @@
       <a href="./EndlessModeView.php"><button class="btn btn-warning">Algoria</button></a>
     <?php } ?>
 
-
     <span>High Score: <?= $highScore; ?></span>
 
   </div>
