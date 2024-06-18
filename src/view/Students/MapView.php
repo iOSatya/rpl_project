@@ -19,7 +19,7 @@
     <a href="./Level6MapView.php" <?php if ($mapLevel < 6) {echo "onclick='return false'"; } ?>><button class="btn btn-warning" <?php if ($mapLevel < 6) {echo "disabled"; } ?>>Saurian Peaks</button></a>
     <a href="./Level7MapView.php" <?php if ($mapLevel < 7) {echo "onclick='return false'"; } ?>><button class="btn btn-warning" <?php if ($mapLevel < 7) {echo "disabled"; } ?>>Severnygrad</button></a>
     <?php if ($mapLevel == 8) { ?>
-      <a href="./EndlessModeView.php"><button class="btn btn-warning">Algoria</button></a>
+      <a href="./EndlessModeView.php"><button class="btn btn-warning">Trevaurhin</button></a>
     <?php } ?>
 
     <span>High Score: <?= $highScore; ?></span>
