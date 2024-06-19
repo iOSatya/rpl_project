@@ -1,6 +1,7 @@
 <?php
 
 class MapModel extends DatabaseModel {
+  
   private $pdo = null;
 
   function __construct() {

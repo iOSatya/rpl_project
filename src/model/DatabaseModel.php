@@ -1,6 +1,7 @@
 <?php
 
 class DatabaseModel {
+  
   private $dbId = "mysql:host=localhost; dbname=rpl_project";
   private $dbUsername = "root";
   private $dbPassword = "";

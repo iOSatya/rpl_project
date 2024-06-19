@@ -1,6 +1,7 @@
 <?php
 
 class CreateAssignmentModel extends DatabaseModel {
+  
   private $pdo = null;
 
   function __construct() {
