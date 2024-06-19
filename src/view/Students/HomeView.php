@@ -7,9 +7,9 @@
     <div id="content" class="d-flex border border-light p-5 rounded-5">
       <img src="./../images/guild_banner.png" id="image" class="rounded-5" style="height: 500px; width: 500px;">
       <div class="d-flex flex-column ms-5" style="width: 500px;">
-        <a id="startGame" class="btn btn-outline-warning mb-2" href="./MapView.php">Start Game</a>
-        <a id="leaderboard" class="btn btn-outline-warning mb-2" href="./LeaderboardView.php">Leaderboard</a>
-        <a id="logout" class="btn btn-outline-danger mt-auto" href="./../../controller/LogoutController.php">Logout</a>
+        <a id="startGame" class="btn btn-outline-warning mb-2">Start Game</a>
+        <a id="profile" class="btn btn-outline-warning mb-2">Profile</a>
+        <a id="logout" class="btn btn-outline-danger mt-auto">Logout</a>
       </div>
     </div>
   </div>
@@ -22,18 +22,28 @@
 
 
     $("#startGame").on("mouseenter", function() {
-
       $("#image").fadeTo(0, 0, function() {
         $("#image").attr("src", "./../images/fantasy_map.png");
         $("#image").fadeTo(300, 1);
       });
-
     });
 
-    $("#leaderboard").on("mouseenter", function() {
+    $("#startGame").on("click", function() {
+      $("#content").fadeTo(400, 0, function() {
+        $(location).prop("href", "./MapView.php");
+      });
+    });
+
+    $("#profile").on("mouseenter", function() {
       $("#image").fadeTo(0, 0, function() {
         $("#image").attr("src", "./../images/guild_hall.png");
         $("#image").fadeTo(300, 1);
+      });
+    });
+
+    $("#profile").on("click", function() {
+      $("#content").fadeTo(400, 0, function() {
+        $(location).prop("href", "./ProfileView.php");
       });
     });
 
@@ -41,6 +51,12 @@
       $("#image").fadeTo(0, 0, function() {
         $("#image").attr("src", "./../images/fantasy_room.png");
         $("#image").fadeTo(300, 1);
+      });
+    });
+
+    $("#logout").on("click", function() {
+      $("#content").fadeTo(400, 0, function() {
+        $(location).prop("href", "./../../controller/LogoutController.php");
       });
     });
 

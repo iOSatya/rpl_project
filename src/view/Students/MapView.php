@@ -117,12 +117,19 @@
 
     </div>  
   
-    <a class="btn btn-outline-light mt-3" href="./HomeView.php">Home</a>
+    <a id="home" class="btn btn-outline-light mt-3">Home</a>
 
   </div>
 
   <script>
     $("#mapCards").hide().fadeIn();
+
+    $("#home").on("click", function() {
+      $("#mapCards").fadeTo(400, 0, function() {
+        $(location).prop("href", "./HomeView.php");
+      });
+    });
+
   </script>
 
 <?php
