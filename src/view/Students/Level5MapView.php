@@ -14,6 +14,7 @@
 
 ?>
 
+  <a class="btn btn-primary" href="./MapView.php">Map</a>
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
 
     <div>

@@ -20,7 +20,6 @@
 
     $("#content").hide().fadeIn();
 
-
     $("#startGame").on("mouseenter", function() {
       $("#image").fadeTo(0, 0, function() {
         $("#image").attr("src", "./../images/fantasy_map.png");

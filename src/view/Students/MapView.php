@@ -116,8 +116,14 @@
       </button>
 
     </div>  
-  
-    <a id="home" class="btn btn-outline-light mt-3">Home</a>
+    
+    <div class="d-flex mt-3">
+      <a id="home" class="btn btn-outline-light">Home</a>
+      <?php if ($mapLevel == 8) { ?>
+        <a id="leaderboard" class="btn btn-outline-danger ms-2">Leaderboard</a>
+      <?php } ?>
+    </div>
+
 
   </div>
 
@@ -130,6 +136,11 @@
       });
     });
 
+    $("#leaderboard").on("click", function() {
+      $("#mapCards").fadeTo(400, 0, function() {
+        $(location).prop("href", "./LeaderboardView.php");
+      });
+    });
   </script>
 
 <?php
