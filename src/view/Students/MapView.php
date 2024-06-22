@@ -12,7 +12,7 @@
   
   <div class="d-flex flex-column align-items-center justify-content-center bg-dark" style="height: 100vh;">
 
-    <div id="mapCards" class="carousel slide carousel-fade" style="width: 1000px;">
+    <div id="mapCards" class="carousel slide carousel-fade" style="width: 1000px; opacity: 0;">
       
       <div class="carousel-inner">
 
@@ -20,7 +20,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/schwarzwald.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -80px;">
             <div class="carousel-caption p-3">
-              <span class="fs-5">Schwarzwald</span>
+              <span class="fs-5" style="font-family: 'Cinzel';">Schwarzwald</span>
               <hr>
               <span>This is level 1 map's text example</span>
             </div>
@@ -31,7 +31,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/yinghua.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; <?php if ($mapLevel < 2) {echo "filter: brightness(0.2);";} ?>">
             <div class="carousel-caption p-3">
-              <span class="fs-5"><?php if ($mapLevel < 2) {echo "Locked";} else {echo "Yīnghuá";} ?></span>
+              <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 2) {echo "Locked";} else {echo "Yīnghuá";} ?></span>
               <hr>
               <span><?php if ($mapLevel < 2) {echo "Clear Previous Map";} else {echo "This is level 2 map's text example";} ?></span>
             </div>
@@ -42,7 +42,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/tsukimokure.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -330px; <?php if ($mapLevel < 3) {echo "filter: brightness(0.2);";} ?>">
             <div class="carousel-caption p-3">
-              <span class="fs-5"><?php if ($mapLevel < 3) {echo "Locked";} else {echo "Tsukimokure";} ?></span>
+              <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 3) {echo "Locked";} else {echo "Tsukimokure";} ?></span>
               <hr>
               <span><?php if ($mapLevel < 3) {echo "Clear Previous Map";} else {echo "This is level 3 map's text example";} ?></span>
             </div>
@@ -53,7 +53,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/amasis.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -330px; <?php if ($mapLevel < 4) {echo "filter: brightness(0.2);";} ?>">
             <div class="carousel-caption p-3">
-              <span class="fs-5"><?php if ($mapLevel < 4) {echo "Locked";} else {echo "Amasis";} ?></span>
+              <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 4) {echo "Locked";} else {echo "Amasis";} ?></span>
               <hr>
               <span><?php if ($mapLevel < 4) {echo "Clear Previous Map";} else {echo "This is level 4 map's text example";} ?></span>
             </div>
@@ -64,7 +64,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/laverendel.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -190px; <?php if ($mapLevel < 5) {echo "filter: brightness(0.2);";} ?>">
             <div class="carousel-caption p-3">
-              <span class="fs-5"><?php if ($mapLevel < 5) {echo "Locked";} else {echo "Lavérendel";} ?></span>
+              <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 5) {echo "Locked";} else {echo "Lavérendel";} ?></span>
               <hr>
               <span><?php if ($mapLevel < 5) {echo "Clear Previous Map";} else {echo "This is level 5 map's text example";} ?></span>
             </div>
@@ -75,7 +75,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/saurian_peaks.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -365px; <?php if ($mapLevel < 6) {echo "filter: brightness(0.2);";} ?>">
             <div class="carousel-caption p-3">
-              <span class="fs-5"><?php if ($mapLevel < 6) {echo "Locked";} else {echo "Saurian Peaks";} ?></span>
+              <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 6) {echo "Locked";} else {echo "Saurian Peaks";} ?></span>
               <hr>
               <span><?php if ($mapLevel < 6) {echo "Clear Previous Map";} else {echo "This is level 6 map's text example";} ?></span>
             </div>
@@ -86,7 +86,7 @@
           <div class="d-flex border border-secondary rounded-4">
             <img src="./../images/severnygrad.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -300px; <?php if ($mapLevel < 7) {echo "filter: brightness(0.2);";} ?>">
             <div class="carousel-caption p-3">
-              <span class="fs-5"><?php if ($mapLevel < 7) {echo "Locked";} else {echo "Severnygrad";} ?></span>
+              <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 7) {echo "Locked";} else {echo "Severnygrad";} ?></span>
               <hr>
               <span><?php if ($mapLevel < 7) {echo "Clear Previous Map";} else {echo "This is level 7 map's text example";} ?></span>
             </div>
@@ -98,7 +98,7 @@
             <div class="d-flex border border-secondary rounded-4">
               <img src="./../images/trevaurhin.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -300px;">
               <div class="carousel-caption p-3">
-                <span class="fs-5">Trevaurhin</span>
+                <span class="fs-5" style="font-family: 'Cinzel';">Trevaurhin</span>
                 <hr>
                 <span class="text-light">High Score: <?= $highScore; ?></span>
               </div>
@@ -118,9 +118,9 @@
     </div>  
     
     <div class="d-flex mt-3">
-      <a id="home" class="btn btn-outline-light">Home</a>
+      <a id="home" class="btn btn-outline-light" href="./HomeView.php">Home</a>
       <?php if ($mapLevel == 8) { ?>
-        <a id="leaderboard" class="btn btn-outline-danger ms-2">Leaderboard</a>
+        <a id="leaderboard" class="btn btn-outline-danger ms-2" href="./LeaderboardView.php">Leaderboard</a>
       <?php } ?>
     </div>
 
@@ -128,20 +128,16 @@
   </div>
 
   <script>
-    $("#mapCards").hide().fadeIn();
 
-    $("#home").on("click", function() {
-      $("#mapCards").fadeTo(400, 0, function() {
-        $(location).prop("href", "./HomeView.php");
-      });
+    $(document).ready(function() {
+      $("#mapCards").fadeTo(500, 1)
     });
 
-    $("#leaderboard").on("click", function() {
-      $("#mapCards").fadeTo(400, 0, function() {
-        $(location).prop("href", "./LeaderboardView.php");
-      });
-    });
   </script>
+
+  <style>
+
+  </style>
 
 <?php
   require_once "./../FooterView.php";

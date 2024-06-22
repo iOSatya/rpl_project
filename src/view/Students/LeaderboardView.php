@@ -12,7 +12,7 @@
   
   <div class="bg-dark p-5" style="height: 100vh;">
 
-    <div id="content">
+    <div id="content" style="opacity: 0;">
       <table class="table table-dark table-striped table-hover">
         <thead>
           <tr>
@@ -32,19 +32,13 @@
         </tbody>
       </table>
 
-      <a id="mapBtn" class="btn btn-outline-light">Map</a>
+      <a id="mapBtn" class="btn btn-outline-light" href="./MapView.php">Map</a>
     </div>
 
   </div>
 
   <script>
-    $("#content").hide().fadeIn();
-
-    $("#mapBtn").on("click", function() {
-      $("#content").fadeTo(400, 0, function() {
-        $(location).prop("href", "./MapView.php");
-      });
-    });
+    $("#content").fadeTo(500, 1);
   </script>
 
 <?php

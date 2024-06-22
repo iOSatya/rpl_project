@@ -6,12 +6,12 @@
   <div id="main" class="d-flex flex-column justify-content-center align-items-center">
 
     <div id="background"></div>
-    <div id="form">
+    <div id="form" style="opacity: 0;">
       <form class="d-flex flex-column border border-light text-white p-4 rounded-4" action="../controller/LoginController.php" method="post">
-        <span class="fw-semibold fs-3 mb-2">Login</span>
+        <span class="fw-medium fs-3 mb-2" style="font-family: 'Cinzel';">Login</span>
         <input class="form-control mb-2" name="username" type="text" placeholder="Username">
         <input class="form-control mb-2" name="userPassword" type="password" placeholder="Password">
-        <a class="align-self-end link-light link-underline link-underline-opacity-0 mb-2" style="cursor: pointer;">I don't have an account</a>
+        <a class="align-self-end link-light link-underline link-underline-opacity-0 mb-2" style="cursor: pointer;" href="./SignupView.php">I don't have an account</a>
         <button class="btn btn-outline-light">Login</button>
         <?php if (isset($_SESSION["errorMessage"])) { ?>
           <span class="text-danger"><?= $_SESSION["errorMessage"]; ?></span>
@@ -23,13 +23,7 @@
 
   <script>
 
-    $("#form").hide().fadeIn();
-
-    $("a").on("click", function() {
-      $("#form").fadeOut(function() {
-        $(location).prop("href", "./SignupView.php");
-      });
-    });
+    $("#form").fadeTo(500, 1)
 
   </script>
 

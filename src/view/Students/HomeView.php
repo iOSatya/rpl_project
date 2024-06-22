@@ -3,64 +3,32 @@
   require_once "./../HeaderView.php";
 ?>
   
-  <div class="d-flex flex-column justify-content-center align-items-center bg-dark" style="height: 100vh;">
-    <div id="content" class="d-flex border border-light p-5 rounded-5">
-      <img src="./../images/guild_banner.png" id="image" class="rounded-5" style="height: 500px; width: 500px;">
-      <div class="d-flex flex-column ms-5" style="width: 500px;">
-        <a id="startGame" class="btn btn-outline-warning mb-2">Start Game</a>
-        <a id="profile" class="btn btn-outline-warning mb-2">Profile</a>
-        <a id="logout" class="btn btn-outline-danger mt-auto">Logout</a>
-      </div>
+  <div class="d-flex flex-column justify-content-center">
+    <div id="background"></div>
+    <div id="content" class="d-flex flex-column align-self-end bg-black text-white bg-opacity-50 me-5 justify-content-center" style="height: 100vh; width: 20vw; position: absolute; font-family: 'Cinzel'; opacity: 0;">
+      <a id="startGame" class="btn btn-outline-light border border-0 rounded-0 fw-medium fs-3 mb-2" href="./MapView.php">Start Game</a>
+      <a id="profile" class="btn btn-outline-light border border-0 rounded-0 fw-medium fs-3 mb-2" href="./ProfileView.php">Profile</a>
+      <a id="logout" class="btn btn-outline-light border border-0 rounded-0 fw-medium fs-3" href="./../../controller/LogoutController.php">Logout</a>
     </div>
   </div>
 
-
-
   <script>
-
-    $("#content").hide().fadeIn();
-
-    $("#startGame").on("mouseenter", function() {
-      $("#image").fadeTo(0, 0, function() {
-        $("#image").attr("src", "./../images/fantasy_map.png");
-        $("#image").fadeTo(300, 1);
-      });
-    });
-
-    $("#startGame").on("click", function() {
-      $("#content").fadeTo(400, 0, function() {
-        $(location).prop("href", "./MapView.php");
-      });
-    });
-
-    $("#profile").on("mouseenter", function() {
-      $("#image").fadeTo(0, 0, function() {
-        $("#image").attr("src", "./../images/guild_hall.png");
-        $("#image").fadeTo(300, 1);
-      });
-    });
-
-    $("#profile").on("click", function() {
-      $("#content").fadeTo(400, 0, function() {
-        $(location).prop("href", "./ProfileView.php");
-      });
-    });
-
-    $("#logout").on("mouseenter", function() {
-      $("#image").fadeTo(0, 0, function() {
-        $("#image").attr("src", "./../images/fantasy_room.png");
-        $("#image").fadeTo(300, 1);
-      });
-    });
-
-    $("#logout").on("click", function() {
-      $("#content").fadeTo(400, 0, function() {
-        $(location).prop("href", "./../../controller/LogoutController.php");
-      });
-    });
-
-    console.log(src);
+    $("#content").fadeTo(500, 1);
   </script>
+
+  <style>
+    #background {
+      height: 100vh;
+      background: url('./../images/fantasy_valley.png');
+      background-size: cover;
+      background-position: 0px -400px;
+      background-repeat: no-repeat;
+    }
+
+    a {
+      font-family: 'Cinzel';
+    }
+  </style>
 
 <?php
   require_once "./../FooterView.php";
