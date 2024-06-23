@@ -18,6 +18,7 @@
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
 
     <div>
+      <span id="timer"></span>
       <span><?= $_SESSION["playerHp"]; ?></span>
       <span><?= $_SESSION["highScore"]; ?></span>
     </div>
@@ -65,10 +66,24 @@
         </button>
       </form>
     </div>
-
-
     
   </div>
+
+  <script>
+
+    const timer = document.getElementById("timer");
+    let seconds = 5;
+    timer.innerHTML = seconds;
+
+    setInterval(function() {
+      seconds -= 1;
+      timer.innerHTML = seconds;
+    }, 1000);
+
+    setTimeout(() => {
+      window.location.href = "./../../controller/EndlessModeController.php";
+    }, 5000);
+  </script>
 
 <?php
   require_once "./../FooterView.php";

@@ -26,4 +26,10 @@ class DatabaseModel {
     return $result[0];
   }
   
+  function updateUserData($username, $userFullName, $userId) {
+    $query = "UPDATE users SET username=?, userFullName=? WHERE userId=?;";
+    $stmt = $this->pdo()->prepare($query);
+    $stmt->execute([$username, $userFullName, $userId]);
+  }
+
 }
