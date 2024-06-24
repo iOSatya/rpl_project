@@ -20,7 +20,7 @@
     <div class="d-flex flex-column p-4" style="height: 100vh;">
       <button id="skip" class="btn btn-outline-warning align-self-end">Skip</button>
       <div id="conversationSkip" class="d-flex flex-column mt-auto">
-        <img id="character" src="./../images/Level 5/Boss.png" class="align-self-end" style="height: 400px; width: 500px; object-position: 0px 0px; object-fit: cover; display: none;">
+        <img id="character" src="./../images/Level 5/Boss.png" class="align-self-end" style="height: 400px; width: 400px; object-position: 0px 0px; object-fit: cover; display: none;">
         <div class="border text-light p-4" style="height: 200px;">
           <span id="conversation" style="user-select: none; font-family: 'Cinzel';"></span>
         </div>
