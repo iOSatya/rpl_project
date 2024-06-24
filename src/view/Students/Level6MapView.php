@@ -111,7 +111,7 @@
       '"Justice? A weighty concept for one so... grounded. Up here, between earth and sky, all is in flux. Perspective shifts with each gust."',
       '"Then help me see what I\'m missing. I\'m willing to learn."',
       '"Perhaps there is more to you than meets the eye. Very well, seeker. If wisdom is truly your aim, then face me. Test your resolve against the very breath of the mountains. Prove you can adapt when all you know is swept away."',
-      "...!",
+      '...!',
       '"Let our dance begin. Show me the strength of your convictions!"'
     ];
 
