@@ -102,19 +102,15 @@
 
     const conversationList = [
       'Step... Step...',
-      '"Welcome, seeker. Few climb so high, fewer still with purpose in their hearts."',
-      '"You\'re... you\'re the Phoenix? I\'ve come seeking your wisdom."',
-      '"Wisdom? Or is it power you truly desire? They are not always the same."',
-      '"I need both to face the challenges ahead. My world is in danger."',
-      '"And you believe you are the one to save it? Interesting. Tell me, what would you give up to gain what you seek?"',
-      '"I... I\'m not sure. What must I sacrifice?"',
-      '"That is for you to decide. Rebirth demands a price, the old must burn away for the new to emerge."',
-      '"But how can I know what to let go of?"',
-      '"That, young one, is the true test. Not all battles are won with strength alone."',
-      '"Then test me. I\'m ready to face your trial."',
-      '"Are you? Remember, in my fire, you may lose what you think defines you. But you may also gain what you never knew you needed."',
-      '...!',
-      '"Come then, brave one. Let us see what rises from your ashes!"'
+      '"My, my... what an interesting little moth, drawn to the flame of power. Or is it wisdom you seek in these shadowed lands?"',
+      '"I seek the path forward. Are you here to guide or to hinder?"',
+      '"Oh, clever one. Why must it be either? Sometimes the greatest hindrance is the truest guide."',
+      '"I\'ve faced trials of strength and rebirth. What challenge do you pose?"',
+      '"I offer the challenge of truth, young seeker. In a world of illusions, can you discern reality?"',
+      '"I\'ve come too far to be turned aside by tricks and riddles."',
+      '"Tricks and riddles? Such simple words for the tapestry of deception that shapes your world. Tell me, hero, how certain are you of your quest? Of yourself?"',
+      '"I\'m certain enough to face whatever you have planned."',
+      '"Brave words. Let us see if your actions match them. In my realm of moonlight and shadows, every truth casts a thousand lies. Are you prepared to face them all?"',
     ];
 
 
@@ -152,7 +148,7 @@
       object-position: 0px -550px;
       position: absolute;
       z-index: -1;
-      filter: brightness(0.8);
+      filter: brightness(0.4);
     }
   </style>
 
