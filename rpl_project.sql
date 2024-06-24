@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2024 at 07:31 AM
+-- Generation Time: Jun 24, 2024 at 03:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,7 +71,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`studentId`, `userId`, `mapLevel`, `highScore`) VALUES
-(2, 7, 8, 400),
+(2, 7, 8, 440),
 (3, 8, 8, 80);
 
 -- --------------------------------------------------------
@@ -112,7 +112,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userId`, `username`, `userFullName`, `userPassword`, `userStatus`) VALUES
 (5, 'teacher', 'teacher', 'teacher', 'teacher'),
-(7, 'student', 'student', 'student', 'student'),
+(7, 'student', 'I am a Student', 'student', 'student'),
 (8, 'student2', 'student2', 'student2', 'student');
 
 --
