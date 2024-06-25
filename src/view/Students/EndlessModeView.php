@@ -83,8 +83,8 @@
 
     const conversationList = [
       '. . .',
-      '. . .',
-      '. . .',
+      '. . .   . . .',
+      '. . .   . . .   . . .',
       'So, this is where it all leads. A world bathed in endless twilight, the very air heavy with the echoes of what once was. How many choices, how many battles have brought me here?',
       'I\'ve climbed mountains that touched the sky, braved frozen cities locked in time, and faced guardians both wise and terrible. Each step of the way, I thought I was moving towards an end, towards salvation. But this... this is no end. This is eternity stretched out before me, painted in shades of blood and ash.',
       'Is this the price of saving the world? An endless journey through its dying embers? Or perhaps... perhaps this is the world I couldn\'t save, the future I must now prevent.',

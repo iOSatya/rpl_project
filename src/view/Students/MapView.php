@@ -98,7 +98,7 @@
             <div class="d-flex border border-secondary rounded-4">
               <img src="./../images/trevaurhin.png" class="d-block rounded-4" style="height: 500px; width: 1000px; object-fit: cover; object-position: 0px -300px;">
               <div class="carousel-caption p-3">
-                <span class="fs-5" style="font-family: 'Cinzel';">Algoria</span> <!-- Alter: Trevaurhin -->
+                <span class="fs-5" style="font-family: 'Cinzel';">Trevaurhin</span> <!-- Alter: Algoria -->
                 <hr>
                 <span class="text-light">High Score: <?= $highScore; ?></span>
               </div>
