@@ -3,10 +3,15 @@
   require_once "./../HeaderView.php";
 ?>
 
-  <div>
-    <a class="btn btn-danger" href="./../../controller/LogoutController.php">Logout</a>
-    <a class="btn btn-primary" href="./CreateAssignmentView.php">Create Assignment</a>
+  <div class="bg-dark">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+      <div class="d-flex">
+        <a class="border border-white p-4 rounded-3 me-2 text-white" style="text-decoration: none;" href="./CreateAssignmentView.php">Create Assignment</a>
+        <a class="border border-white p-4 rounded-3 text-white" style="text-decoration: none;" href="./../../controller/LogoutController.php">Logout</a>
+      </div>
+    </div>
   </div>
+
 
 <?php
   require_once "./../FooterView.php";
