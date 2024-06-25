@@ -32,54 +32,38 @@
     <a class="btn btn-outline-danger m-4" href="./MapView.php" style="position: absolute;">Map</a>
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
     
-    
-      <div>
-        <span class="text-white" id="timer"></span>
-        <span class="text-white"><?= $_SESSION["playerHp"]; ?></span>
-        <span class="text-white"><?= $_SESSION["highScore"]; ?></span>
+      <div class="d-flex">
+        <span class="border border-warning rounded text-warning p-2 text-start bg-dark bg-opacity-25 me-2" id="timer"></span>
+        <span class="border border-success rounded text-success p-2 text-start bg-dark bg-opacity-25 me-2">High Score: <?= $_SESSION["highScore"]; ?></span>
+        <span class="border border-primary rounded text-primary p-2 text-start bg-dark bg-opacity-25" style="width: <?= $_SESSION["playerHp"] * 6; ?>px;"><?= $_SESSION["playerHp"]; ?></span>
       </div>
+
     
-      <span class="text-white"><?= $assignment["question"]; ?></span>
+      <span class="text-white mt-5 mb-5"><?= $assignment["question"]; ?></span>
     
       <div class="d-flex">
-        <form action="./../../controller/EndlessModeController.php" method="post">
+        <form class="me-2" action="./../../controller/EndlessModeController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="userAnswer" value="A">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerA"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerA"]; ?></button>
         </form>
     
-        <form action="./../../controller/EndlessModeController.php" method="post">
+        <form class="me-2" action="./../../controller/EndlessModeController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="userAnswer" value="B">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerB"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerB"]; ?></button>
         </form>
     
-        <form action="./../../controller/EndlessModeController.php" method="post">
+        <form class="me-2" action="./../../controller/EndlessModeController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="userAnswer" value="C">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerC"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerC"]; ?></button>
         </form>
     
-        <form action="./../../controller/EndlessModeController.php" method="post">
+        <form class="me-2" action="./../../controller/EndlessModeController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="userAnswer" value="D">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerD"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerD"]; ?></button>
         </form>
       </div>
       
@@ -135,12 +119,12 @@
   const gameplay = document.getElementById("gameplay");
   const timer = document.getElementById("timer");
   let seconds = 5;
-  timer.innerHTML = seconds;
+  timer.innerHTML = `Time: ${seconds}s`;
 
   if (gameplay.style.display != "none") {
     setInterval(function() {
       seconds -= 1;
-      timer.innerHTML = seconds;
+      timer.innerHTML = `Time: ${seconds}s`;
     }, 1000);
 
     setTimeout(() => {

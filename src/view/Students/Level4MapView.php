@@ -33,56 +33,40 @@
     <a class="btn btn-outline-danger m-4" href="./MapView.php" style="position: absolute;">Map</a>
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
 
-      <div>
-        <span class="text-light"><?= $_SESSION["playerHp"]; ?></span>
-        <span class="text-light"><?= $_SESSION["bossHp"]; ?></span>
+      <div class="d-flex justify-content-between" style="width: 680px;">
+        <span class="border border-primary rounded text-primary p-2 text-end bg-dark bg-opacity-25" style="width: <?= $_SESSION["playerHp"] * 3; ?>px;"><?= $_SESSION["playerHp"]; ?></span>
+        <span class="border border-danger text-danger p-2 rounded bg-dark bg-opacity-25" style="width: <?= $_SESSION["bossHp"] * 3; ?>px;"><?= $_SESSION["bossHp"]; ?></span>
       </div>
 
-      <span class="text-light"><?= $assignment["question"]; ?></span>
+      <span class="text-light mt-5 mb-5"><?= $assignment["question"]; ?></span>
 
       <div class="d-flex">
-        <form action="./../../controller/MapController.php" method="post">
+        <form class="me-2" action="./../../controller/MapController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="mapRegion" value="Level4Map">
           <input type="hidden" name="userAnswer" value="A">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerA"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerA"]; ?></button>
         </form>
 
-        <form action="./../../controller/MapController.php" method="post">
+        <form class="me-2" action="./../../controller/MapController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="mapRegion" value="Level4Map">
           <input type="hidden" name="userAnswer" value="B">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerB"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerB"]; ?></button>
         </form>
 
-        <form action="./../../controller/MapController.php" method="post">
+        <form class="me-2" action="./../../controller/MapController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="mapRegion" value="Level4Map">
           <input type="hidden" name="userAnswer" value="C">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerC"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerC"]; ?></button>
         </form>
 
-        <form action="./../../controller/MapController.php" method="post">
+        <form class="me-2" action="./../../controller/MapController.php" method="post">
           <input type="hidden" name="assignmentId" value="<?= $assignment['assignmentId']; ?>">
           <input type="hidden" name="mapRegion" value="Level4Map">
           <input type="hidden" name="userAnswer" value="D">
-          <button class="card" type="submit">
-            <div class="card-body">
-              <?= $assignment["answerD"]; ?>
-            </div>
-          </button>
+          <button class="border p-4 text-light bg-transparent" type="submit"><?= $assignment["answerD"]; ?></button>
         </form>
       </div>
 

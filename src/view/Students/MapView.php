@@ -22,7 +22,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';">Schwarzwald</span>
               <hr>
-              <span>This is level 1 map's text example</span>
+              <span>The Black Woods</span>
             </div>
           </div>
         </a>
@@ -33,7 +33,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 2) {echo "Locked";} else {echo "Yīnghuá";} ?></span>
               <hr>
-              <span><?php if ($mapLevel < 2) {echo "Clear Previous Map";} else {echo "This is level 2 map's text example";} ?></span>
+              <span><?php if ($mapLevel < 2) {echo "Clear Previous Map";} else {echo "The Abode of Cherry Blossoms";} ?></span>
             </div>
           </div>
         </a>
@@ -44,7 +44,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 3) {echo "Locked";} else {echo "Tsukimokure";} ?></span>
               <hr>
-              <span><?php if ($mapLevel < 3) {echo "Clear Previous Map";} else {echo "This is level 3 map's text example";} ?></span>
+              <span><?php if ($mapLevel < 3) {echo "Clear Previous Map";} else {echo "Hidden Moon Behind the Mist";} ?></span>
             </div>
           </div>
         </a>
@@ -55,7 +55,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 4) {echo "Locked";} else {echo "Amasis";} ?></span>
               <hr>
-              <span><?php if ($mapLevel < 4) {echo "Clear Previous Map";} else {echo "This is level 4 map's text example";} ?></span>
+              <span><?php if ($mapLevel < 4) {echo "Clear Previous Map";} else {echo "Desert Civilization";} ?></span>
             </div>
           </div>
         </a>
@@ -66,7 +66,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 5) {echo "Locked";} else {echo "Lavérendel";} ?></span>
               <hr>
-              <span><?php if ($mapLevel < 5) {echo "Clear Previous Map";} else {echo "This is level 5 map's text example";} ?></span>
+              <span><?php if ($mapLevel < 5) {echo "Clear Previous Map";} else {echo "Lavender Village";} ?></span>
             </div>
           </div>
         </a>
@@ -77,7 +77,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 6) {echo "Locked";} else {echo "Saurian Peaks";} ?></span>
               <hr>
-              <span><?php if ($mapLevel < 6) {echo "Clear Previous Map";} else {echo "This is level 6 map's text example";} ?></span>
+              <span><?php if ($mapLevel < 6) {echo "Clear Previous Map";} else {echo "Wilderness";} ?></span>
             </div>
           </div>
         </a>
@@ -88,7 +88,7 @@
             <div class="carousel-caption p-3">
               <span class="fs-5" style="font-family: 'Cinzel';"><?php if ($mapLevel < 7) {echo "Locked";} else {echo "Severnygrad";} ?></span>
               <hr>
-              <span><?php if ($mapLevel < 7) {echo "Clear Previous Map";} else {echo "This is level 7 map's text example";} ?></span>
+              <span><?php if ($mapLevel < 7) {echo "Clear Previous Map";} else {echo "Northern Palace";} ?></span>
             </div>
           </div>
         </a>
