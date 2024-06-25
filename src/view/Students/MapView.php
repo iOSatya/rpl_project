@@ -115,7 +115,7 @@
         <span class="visually-hidden">Next</span>
       </button>
 
-    </div>  
+    </div>
     
     <div class="d-flex mt-3">
       <a id="home" class="btn btn-outline-light" href="./HomeView.php">Home</a>
